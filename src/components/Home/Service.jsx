@@ -5,28 +5,28 @@ import "./Service.css";
 const cards = [
   {
     title: "Deep Carpet Cleaning",
-    image: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "./service1.jpg",
     details: "Our professional deep cleaning removes embedded dirt, allergens, and stains to restore your carpets to like-new condition. Using eco-friendly solutions and advanced equipment.",
     button: "Learn More",
     buttonLink: "#",
   },
   {
     title: "Stain Removal",
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "./service2.jpg",
     details: "Specialized treatment for tough stains including wine, pet accidents, coffee, and more. We use industry-leading techniques to eliminate stains without damaging fibers.",
     button: "View Services",
     buttonLink: "#",
   },
   {
     title: "Pet Odor Treatment",
-    image: "https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "./service3.jpg",
     details: "Eliminate pet odors at the source with our enzymatic treatments. Safe for pets and children, our process neutralizes odors rather than just masking them.",
     button: "Pet Solutions",
     buttonLink: "#",
   },
   {
     title: "Commercial Cleaning",
-    image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "./service4.jpg",
     details: "Professional cleaning for offices, hotels, and commercial spaces. We work around your schedule with fast-drying methods to minimize business disruption.",
     button: "Business Services",
     buttonLink: "#",
