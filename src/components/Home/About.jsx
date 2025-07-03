@@ -34,7 +34,7 @@ const About = () => {
           <div className="about-image-container" ref={imageRef}>
             <div className="about-image-wrapper">
               <img 
-                src="https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                src="./team.jpeg" 
                 alt="Professional carpet cleaning service" 
                 className="about-image"
                 loading="lazy"
