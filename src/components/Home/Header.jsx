@@ -1,28 +1,29 @@
 import React from 'react';
-import { FaArrowRight, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
 import './Header.css';
 
 const Header = () => {
+  // ✅ Build the correct URL once, then reuse it
+  const backgroundUrl = `${process.env.PUBLIC_URL}/header-image.jpg`;
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Form submission logic would go here
     console.log('Form submitted');
   };
 
   return (
     <header className="header">
-      {/* Top Info Bar */}
-     
- 
-
-      {/* Hero Section */}
+      {/* ─── Hero Section ─── */}
       <div
         className="hero"
-        style={{ backgroundImage: `url(https://greenworkscarpetcleaning.com/wp-content/uploads/2025/01/top-carpet-cleaners-in-Upland-CA-1.jpg)` }}
+        style={{ backgroundImage: `url(${backgroundUrl})` }}   /* <— here */
       >
-        <div className="hero-overlay"></div>
+        {/* Optional overlay for gradient or darken effect */}
+        <div className="hero-overlay" />
+
         <div className="container">
           <div className="hero-content">
+            {/* ── Left column ── */}
             <div className="hero-text">
               <span className="hero-badge">Welcome to Greenworks Carpet Cleaning</span>
               <h1>We are the #1&nbsp;Rated Carpet&nbsp;Cleaning&nbsp;Service</h1>
@@ -33,19 +34,14 @@ const Header = () => {
               </p>
 
               <div className="hero-features">
-                <div className="feature-item">
-                  <div className="feature-icon">✓</div>
-                  <span>Eco-Friendly Products</span>
-                </div>
-                <div className="feature-item">
-                  <div className="feature-icon">✓</div>
-                  <span>Same Day Service</span>
-                </div>
-               
-                <div className="feature-item">
-                  <div className="feature-icon">✓</div>
-                  <span>100% Trust Guarantee</span>
-                </div>
+                {['Eco-Friendly Products', 'Same Day Service', '100% Trust Guarantee'].map(
+                  (label) => (
+                    <div className="feature-item" key={label}>
+                      <div className="feature-icon">✓</div>
+                      <span>{label}</span>
+                    </div>
+                  )
+                )}
               </div>
 
               <div className="hero-cta">
@@ -53,12 +49,11 @@ const Header = () => {
                   <span>Schedule Service</span>
                   <FaArrowRight />
                 </button>
-                <button className="cta-secondary">
-                  Learn More
-                </button>
+                <button className="cta-secondary">Learn More</button>
               </div>
             </div>
 
+            {/* ── Right column ── */}
             <div className="hero-form-container">
               <form className="booking-form" onSubmit={handleSubmit}>
                 <h3>Request a Free Quote</h3>
@@ -81,7 +76,7 @@ const Header = () => {
                   </select>
                 </div>
                 <div className="form-group">
-                  <textarea placeholder="Additional Details"></textarea>
+                  <textarea placeholder="Additional Details" />
                 </div>
                 <button type="submit" className="submit-btn">
                   Get Free Estimate
