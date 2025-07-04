@@ -3,7 +3,6 @@ import { FaArrowRight } from 'react-icons/fa';
 import './Header.css';
 
 const Header = () => {
-  // ✅ Build the correct URL once, then reuse it
   const backgroundUrl = `${process.env.PUBLIC_URL}/header-image.jpg`;
 
   const handleSubmit = (e) => {
@@ -13,20 +12,22 @@ const Header = () => {
 
   return (
     <header className="header">
-      {/* ─── Hero Section ─── */}
+      {/* Info Bar - Fixed at the top */}
+     
+
+      {/* Hero Section */}
       <div
         className="hero"
-        style={{ backgroundImage: `url(${backgroundUrl})` }}   /* <— here */
+        style={{ backgroundImage: `url(${backgroundUrl})` }}
       >
-        {/* Optional overlay for gradient or darken effect */}
         <div className="hero-overlay" />
 
         <div className="container">
           <div className="hero-content">
-            {/* ── Left column ── */}
+            {/* Left Column - Content */}
             <div className="hero-text">
               <span className="hero-badge">Welcome to Greenworks Carpet Cleaning</span>
-              <h1>We are the #1&nbsp;Rated Carpet&nbsp;Cleaning&nbsp;Service</h1>
+              <h1>We are the #1 Rated Carpet Cleaning Service</h1>
               <p className="hero-description">
                 At Greenworks Carpet Cleaning, a home isn't spotless until its carpets
                 are. As an environmentally-conscious company, we deliver unparalleled
@@ -53,7 +54,7 @@ const Header = () => {
               </div>
             </div>
 
-            {/* ── Right column ── */}
+            {/* Right Column - Form */}
             <div className="hero-form-container">
               <form className="booking-form" onSubmit={handleSubmit}>
                 <h3>Request a Free Quote</h3>

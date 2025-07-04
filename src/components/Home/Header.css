@@ -83,6 +83,7 @@ body {
 /* Hero Section */
 .header {
   position: relative;
+  margin-top: 40px; /* To account for fixed info bar */
 }
 
 .hero {
@@ -368,6 +369,10 @@ body {
 }
 
 @media (max-width: 768px) {
+  .header {
+    margin-top: 36px;
+  }
+  
   .hero {
     min-height: auto;
     padding: clamp(80px, 12vh, 100px) 0 clamp(40px, 8vh, 60px);
@@ -387,12 +392,18 @@ body {
 }
 
 @media (max-width: 576px) {
+  .header {
+    margin-top: 32px;
+  }
+  
   .hero {
     padding: clamp(70px, 12vh, 90px) 0 clamp(30px, 6vh, 40px);
   }
   
   .hero-badge {
     margin-bottom: clamp(10px, 2vh, 15px);
+    width: 80%;
+    margin-right: 15px;
   }
   
   .hero-features {
@@ -403,7 +414,8 @@ body {
   .hero-cta {
     flex-direction: column;
     gap: clamp(10px, 2vh, 15px);
-    width: 100%;
+    width: 80%;
+    margin-right: 15px;
   }
   
   .cta-primary, .cta-secondary {
@@ -422,6 +434,10 @@ body {
 }
 
 @media (max-width: 400px) {
+  .header {
+    margin-top: 28px;
+  }
+  
   .hero {
     padding: clamp(60px, 10vh, 80px) 0 clamp(20px, 5vh, 30px);
   }
@@ -439,6 +455,10 @@ body {
 
 /* Special cases for very small devices */
 @media (max-width: 350px) {
+  .header {
+    margin-top: 24px;
+  }
+  
   .hero-badge {
     font-size: 12px;
     padding: 4px 8px;
