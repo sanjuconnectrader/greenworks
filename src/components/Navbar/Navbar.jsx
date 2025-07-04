@@ -41,7 +41,7 @@ const Navbar = () => {
           transition={{ duration: 0.5 }}
         >
           <img
-            src="https://greenworkscarpetcleaning.com/wp-content/uploads/2025/02/cropped-GW_CARPET_CLEANING_2025_LOGO-removebg-preview.png"
+            src="./green-logo.png"
             alt="LushLandscapes"
           />
         </motion.a>
