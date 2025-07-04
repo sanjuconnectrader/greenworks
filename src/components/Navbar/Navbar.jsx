@@ -68,8 +68,8 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <FaPhone className="btn__icon--left" />
-              Call&nbsp;Us&nbsp;Now
+         
+              Call-Us-Now
             </motion.button>
 
             <motion.button
@@ -77,8 +77,8 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <FaCalendarAlt className="btn__icon--left" />
-              Schedule&nbsp;Now
+             
+              Schedule Now
             </motion.button>
           </div>
         </div>

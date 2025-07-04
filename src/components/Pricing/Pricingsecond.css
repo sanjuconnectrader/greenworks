@@ -1,0 +1,461 @@
+/* Pricing-page-second.css */
+:root {
+  --Pricing-page-second-primary-color: #1B74BC;
+  --Pricing-page-second-primary-light: #02AEEF;
+  --Pricing-page-second-primary-dark: #0A5A8C;
+  --Pricing-page-second-accent-color: #FF6B35;
+  --Pricing-page-second-dark-color: #092948;
+  --Pricing-page-second-text-color: #2D3748;
+  --Pricing-page-second-light-gray: #F8FAFC;
+  --Pricing-page-second-medium-gray: #E2E8F0;
+  --Pricing-page-second-white: #FFFFFF;
+  --Pricing-page-second-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --Pricing-page-second-shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.15);
+  --Pricing-page-second-border-radius: 16px;
+  --Pricing-page-second-border-radius-sm: 8px;
+  --Pricing-page-second-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+/* Base Styles */
+.Pricing-page-second {
+  padding: 5rem 1rem;
+  background-color: var(--Pricing-page-second-light-gray);
+  font-family: 'Poppins', sans-serif;
+  color: var(--Pricing-page-second-text-color);
+}
+
+.Pricing-page-second-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Section Styles */
+.Pricing-page-second-service-section {
+  margin-bottom: 6rem;
+  position: relative;
+}
+
+.Pricing-page-second-section-header {
+  margin-bottom: 3rem;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Pricing-page-second-section-title-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.Pricing-page-second-section-pretitle {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--Pricing-page-second-primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.Pricing-page-second-section-title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--Pricing-page-second-dark-color);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.Pricing-page-second-title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--Pricing-page-second-primary-color), var(--Pricing-page-second-primary-light));
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.Pricing-page-second-section-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--Pricing-page-second-text-color);
+  opacity: 0.9;
+  margin: 1.5rem auto 0;
+}
+
+/* Services Grid */
+.Pricing-page-second-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
+  padding: 0 1rem;
+}
+
+/* Service Card */
+.Pricing-page-second-service-card {
+  background: var(--Pricing-page-second-white);
+  border-radius: var(--Pricing-page-second-border-radius);
+  overflow: hidden;
+  box-shadow: var(--Pricing-page-second-shadow);
+  transition: var(--Pricing-page-second-transition);
+  position: relative;
+  border: 1px solid var(--Pricing-page-second-medium-gray);
+}
+
+.Pricing-page-second-service-card.Pricing-page-second-popular {
+  border-color: var(--Pricing-page-second-primary-light);
+}
+
+.Pricing-page-second-popular-badge {
+  position: absolute;
+  top: 20px;
+  right: -10px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.Pricing-page-second-badge-text {
+  background: var(--Pricing-page-second-primary-light);
+  color: var(--Pricing-page-second-white);
+  padding: 0.5rem 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px 0 0 4px;
+  box-shadow: 0 4px 12px rgba(2, 174, 239, 0.3);
+}
+
+.Pricing-page-second-badge-triangle {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 10px solid var(--Pricing-page-second-primary-light);
+}
+
+/* Card Image */
+.Pricing-page-second-card-image-container {
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+}
+
+.Pricing-page-second-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--Pricing-page-second-transition);
+}
+
+.Pricing-page-second-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+}
+
+.Pricing-page-second-service-card:hover .Pricing-page-second-card-image {
+  transform: scale(1.08);
+}
+
+.Pricing-page-second-card-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--Pricing-page-second-primary-color);
+  font-size: 1.8rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  transition: var(--Pricing-page-second-transition);
+}
+
+.Pricing-page-second-service-card:hover .Pricing-page-second-card-icon {
+  transform: scale(1.1);
+  color: var(--Pricing-page-second-primary-light);
+}
+
+.Pricing-page-second-service-icon {
+  transition: var(--Pricing-page-second-transition);
+}
+
+/* Card Content */
+.Pricing-page-second-card-content {
+  padding: 2rem;
+}
+
+.Pricing-page-second-card-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--Pricing-page-second-medium-gray);
+}
+
+.Pricing-page-second-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--Pricing-page-second-dark-color);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.Pricing-page-second-price-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.Pricing-page-second-card-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--Pricing-page-second-primary-color);
+  line-height: 1;
+}
+
+.Pricing-page-second-price-note {
+  font-size: 0.9rem;
+  color: var(--Pricing-page-second-text-color);
+  opacity: 0.8;
+}
+
+/* Features */
+.Pricing-page-second-card-features {
+  margin-bottom: 2rem;
+}
+
+.Pricing-page-second-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Pricing-page-second-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed var(--Pricing-page-second-medium-gray);
+}
+
+.Pricing-page-second-feature-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.Pricing-page-second-check-container {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background: rgba(27, 116, 188, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Pricing-page-second-check-icon {
+  color: var(--Pricing-page-second-primary-color);
+  font-size: 0.8rem;
+}
+
+.Pricing-page-second-feature-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--Pricing-page-second-text-color);
+}
+
+/* Button */
+.Pricing-page-second-card-button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to right, var(--Pricing-page-second-primary-color), var(--Pricing-page-second-primary-light));
+  color: var(--Pricing-page-second-white);
+  border: none;
+  border-radius: var(--Pricing-page-second-border-radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--Pricing-page-second-transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  box-shadow: 0 4px 15px rgba(2, 174, 239, 0.3);
+}
+
+.Pricing-page-second-card-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(2, 174, 239, 0.4);
+}
+
+.Pricing-page-second-button-icon {
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.Pricing-page-second-card-button:hover .Pricing-page-second-button-icon {
+  transform: translateX(3px);
+}
+
+/* Footer */
+.Pricing-page-second-service-footer {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.Pricing-page-second-guarantee-badge {
+  display: inline-flex;
+  align-items: center;
+  background: var(--Pricing-page-second-white);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  box-shadow: var(--Pricing-page-second-shadow);
+  margin-bottom: 1.5rem;
+}
+
+.Pricing-page-second-guarantee-icon {
+  width: 30px;
+  height: 30px;
+  background: var(--Pricing-page-second-primary-color);
+  color: var(--Pricing-page-second-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.8rem;
+  font-weight: 700;
+}
+
+.Pricing-page-second-guarantee-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--Pricing-page-second-dark-color);
+}
+
+.Pricing-page-second-disclaimer {
+  font-size: 0.9rem;
+  color: var(--Pricing-page-second-text-color);
+  opacity: 0.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .Pricing-page-second-services-grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .Pricing-page-second {
+    padding: 4rem 1rem;
+  }
+  
+  .Pricing-page-second-service-section {
+    margin-bottom: 4rem;
+  }
+  
+  .Pricing-page-second-card-image-container {
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Pricing-page-second-services-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  .Pricing-page-second-section-header {
+    margin-bottom: 2rem;
+  }
+  
+  .Pricing-page-second-section-title {
+    font-size: 2.2rem;
+  }
+  
+  .Pricing-page-second-popular-badge {
+    top: 15px;
+    right: -8px;
+    height: 36px;
+  }
+  
+  .Pricing-page-second-badge-text {
+    font-size: 0.7rem;
+    padding: 0.4rem 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .Pricing-page-second {
+    padding: 3rem 1rem;
+  }
+  
+  .Pricing-page-second-card-image-container {
+    height: 200px;
+  }
+  
+  .Pricing-page-second-card-content {
+    padding: 1.5rem;
+  }
+  
+  .Pricing-page-second-card-title {
+    font-size: 1.3rem;
+  }
+  
+  .Pricing-page-second-card-price {
+    font-size: 1.6rem;
+  }
+  
+  .Pricing-page-second-feature-item {
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+  
+  .Pricing-page-second-feature-text {
+    font-size: 0.95rem;
+  }
+  
+  .Pricing-page-second-guarantee-badge {
+    padding: 0.7rem 1.2rem;
+  }
+  
+  .Pricing-page-second-guarantee-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .Pricing-page-second-section-title {
+    font-size: 1.8rem;
+  }
+  
+  .Pricing-page-second-section-description {
+    font-size: 1rem;
+  }
+  
+  .Pricing-page-second-card-image-container {
+    height: 180px;
+  }
+  
+  .Pricing-page-second-card-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+}
