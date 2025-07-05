@@ -13,8 +13,14 @@ export default function Location() {
   return (
     <section className="location-section" id="locations">
       <div className="location-container">
+        {/* Decorative elements */}
+        <div className="location-decoration location-decoration-1"></div>
+        <div className="location-decoration location-decoration-2"></div>
+        
         <header className="location-header">
-          <h2 className="location-title">OUR SERVICE AREAS</h2>
+          <h2 className="location-title">
+            <span className="title-text">OUR SERVICE AREAS</span>
+          </h2>
           <p className="location-subtitle">
             We're proud to be the leading carpet cleaning company in the Pacific Northwest
           </p>
@@ -23,25 +29,37 @@ export default function Location() {
         <div className="location-content">
           {/* Map Visualization */}
           <div className="location-map">
-            <img 
-              src="./dottedmap.jpg" 
-              alt="Service coverage map" 
-              className="map-image"
-              loading="lazy"
-            />
+            <div className="map-wrapper">
+              <img 
+                src="./dottedmap.jpg" 
+                alt="Service coverage map" 
+                className="map-image"
+                loading="lazy"
+              />
+              <div className="map-overlay"></div>
+            </div>
             <div className="map-highlight" aria-hidden="true">
               <div className="pulse-effect"></div>
               <div className="highlight-circle"></div>
+              <div className="highlight-glow"></div>
             </div>
+            <div className="map-label">Greater Seattle Area</div>
           </div>
 
           {/* Cities List */}
           <div className="location-list-container">
+            <div className="location-list-header">
+              <h3 className="list-title">Cities We Serve</h3>
+              <div className="list-divider"></div>
+            </div>
             <ul className="location-list">
               {CITIES.map((city) => (
                 <li key={city} className="location-item">
-                  <FaMapMarkerAlt className="location-icon" />
-                  <span>{city}</span>
+                  <div className="item-content">
+                    <FaMapMarkerAlt className="location-icon" />
+                    <span className="city-name">{city}</span>
+                  </div>
+                  <div className="item-hover-effect"></div>
                 </li>
               ))}
             </ul>
