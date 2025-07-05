@@ -2,9 +2,17 @@ import React from "react";
 import { FaArrowRight, FaPaw } from "react-icons/fa";
 import "./PetOdorHero.css";
 
+// Import the background image properly
 const BG = "./bg-clip.jpg";
 
 export default function PetOdorHero() {
+  const handleScheduleClick = () => {
+    // Scroll to top or navigate to booking page
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Alternatively: navigate to booking page
+    // navigate('/schedule');
+  };
+
   return (
     <section
       className="pet-hero"
@@ -16,6 +24,7 @@ export default function PetOdorHero() {
         className="pet-hero__wave"
         viewBox="0 0 1440 120"
         preserveAspectRatio="none"
+        aria-hidden="true"
       >
         <path
           d="M0,100 C360,50 720,0 1080,50 C1260,70 1440,60 1440,60 L1440,0 L0,0 Z"
@@ -24,12 +33,12 @@ export default function PetOdorHero() {
       </svg>
 
       {/* Dark overlay */}
-      <span className="pet-hero__overlay" />
+      <span className="pet-hero__overlay" aria-hidden="true" />
 
       {/* Content */}
       <div className="pet-hero__inner">
         <div className="pet-hero__badge">
-          <FaPaw className="pet-hero__badge-icon" />
+          <FaPaw className="pet-hero__badge-icon" aria-hidden="true" />
           <span>Premium Service</span>
         </div>
 
@@ -57,10 +66,11 @@ export default function PetOdorHero() {
         <button
           type="button"
           className="pet-hero__btn"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={handleScheduleClick}
+          aria-label="Schedule a cleaning"
         >
           <span>Schedule a Cleaning</span>
-          <FaArrowRight className="pet-hero__btn-icon" />
+          <FaArrowRight className="pet-hero__btn-icon" aria-hidden="true" />
         </button>
       </div>
     </section>
