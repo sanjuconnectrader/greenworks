@@ -1,4 +1,3 @@
-// src/components/Footer.jsx
 import React from "react";
 import "./Footer.css";
 import { FaAngleDoubleRight, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
@@ -22,7 +21,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Main Footer Content */}
+      {/* Main Footer Content - Single Row Layout */}
       <div className="footer__main">
         <div className="footer__main-container">
           {/* Company Info */}
@@ -49,103 +48,106 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Navigation Links */}
-          <div className="footer__nav">
-            <div className="footer__nav-column">
-              <h4 className="footer__nav-title">Services</h4>
-              <ul className="footer__nav-list">
-                <li className="footer__nav-item">
-                  <Link to="/residential" className="footer__nav-link">
-                    <span className="footer__nav-link-text">Residential Cleaning</span>
+          {/* All Navigation in Single Row */}
+          <div className="footer__row-sections">
+            {/* Services */}
+            <div className="footer__section">
+              <h4 className="footer__section-title">Services</h4>
+              <ul className="footer__section-list">
+                <li className="footer__section-item">
+                  <Link to="/residential" className="footer__section-link">
+                    Residential Cleaning
                   </Link>
                 </li>
-                <li className="footer__nav-item">
-                  <Link to="/commercial" className="footer__nav-link">
-                    <span className="footer__nav-link-text">Commercial Cleaning</span>
+                <li className="footer__section-item">
+                  <Link to="/commercial" className="footer__section-link">
+                    Commercial Cleaning
                   </Link>
                 </li>
-                <li className="footer__nav-item">
-                  <Link to="/stain-removal" className="footer__nav-link">
-                    <span className="footer__nav-link-text">Stain Removal</span>
+                <li className="footer__section-item">
+                  <Link to="/stain-removal" className="footer__section-link">
+                    Stain Removal
                   </Link>
                 </li>
-                <li className="footer__nav-item">
-                  <Link to="/deep-cleaning" className="footer__nav-link">
-                    <span className="footer__nav-link-text">Deep Cleaning</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div className="footer__nav-column">
-              <h4 className="footer__nav-title">Company</h4>
-              <ul className="footer__nav-list">
-                <li className="footer__nav-item">
-                  <Link to="/about" className="footer__nav-link">
-                    <span className="footer__nav-link-text">About Us</span>
-                  </Link>
-                </li>
-                <li className="footer__nav-item">
-                  <Link to="/team" className="footer__nav-link">
-                    <span className="footer__nav-link-text">Our Team</span>
-                  </Link>
-                </li>
-                <li className="footer__nav-item">
-                  <Link to="/testimonials" className="footer__nav-link">
-                    <span className="footer__nav-link-text">Testimonials</span>
-                  </Link>
-                </li>
-                <li className="footer__nav-item">
-                  <Link to="/careers" className="footer__nav-link">
-                    <span className="footer__nav-link-text">Careers</span>
+                <li className="footer__section-item">
+                  <Link to="/deep-cleaning" className="footer__section-link">
+                    Deep Cleaning
                   </Link>
                 </li>
               </ul>
             </div>
 
-            <div className="footer__nav-column">
-              <h4 className="footer__nav-title">Support</h4>
-              <ul className="footer__nav-list">
-                <li className="footer__nav-item">
-                  <Link to="/faq" className="footer__nav-link">
-                    <span className="footer__nav-link-text">FAQ</span>
+            {/* Company */}
+            <div className="footer__section">
+              <h4 className="footer__section-title">Company</h4>
+              <ul className="footer__section-list">
+                <li className="footer__section-item">
+                  <Link to="/about" className="footer__section-link">
+                    About Us
                   </Link>
                 </li>
-                <li className="footer__nav-item">
-                  <Link to="/contact" className="footer__nav-link">
-                    <span className="footer__nav-link-text">Contact</span>
+                <li className="footer__section-item">
+                  <Link to="/team" className="footer__section-link">
+                    Our Team
                   </Link>
                 </li>
-                <li className="footer__nav-item">
-                  <Link to="/privacy" className="footer__nav-link">
-                    <span className="footer__nav-link-text">Privacy Policy</span>
+                <li className="footer__section-item">
+                  <Link to="/testimonials" className="footer__section-link">
+                    Testimonials
                   </Link>
                 </li>
-                <li className="footer__nav-item">
-                  <Link to="/terms" className="footer__nav-link">
-                    <span className="footer__nav-link-text">Terms of Service</span>
+                <li className="footer__section-item">
+                  <Link to="/careers" className="footer__section-link">
+                    Careers
                   </Link>
                 </li>
               </ul>
             </div>
-          </div>
 
-          {/* Contact Information */}
-          <div className="footer__contact">
-            <h4 className="footer__contact-title">Contact Us</h4>
-            <div className="footer__contact-info">
-              <div className="footer__contact-item">
-                <FaMapMarkerAlt className="footer__contact-icon" />
-                <span className="footer__contact-text">123 Green Avenue, Suite 450<br />San Diego, CA 92101</span>
-              </div>
-              <div className="footer__contact-item">
-                <FaPhoneAlt className="footer__contact-icon" />
-                <span className="footer__contact-text">(672) 453-3612</span>
-              </div>
-              <div className="footer__contact-item">
-                <FaEnvelope className="footer__contact-icon" />
-                <span className="footer__contact-text">contact@greenworkscleaning.com</span>
-              </div>
+            {/* Support */}
+            <div className="footer__section">
+              <h4 className="footer__section-title">Support</h4>
+              <ul className="footer__section-list">
+                <li className="footer__section-item">
+                  <Link to="/faq" className="footer__section-link">
+                    FAQ
+                  </Link>
+                </li>
+                <li className="footer__section-item">
+                  <Link to="/contact" className="footer__section-link">
+                    Contact
+                  </Link>
+                </li>
+                <li className="footer__section-item">
+                  <Link to="/privacy" className="footer__section-link">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li className="footer__section-item">
+                  <Link to="/terms" className="footer__section-link">
+                    Terms of Service
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Contact Us */}
+            <div className="footer__section">
+              <h4 className="footer__section-title">Contact Us</h4>
+              <ul className="footer__section-list">
+                <li className="footer__section-item">
+                  <FaMapMarkerAlt className="footer__contact-icon" />
+                  <span>123 Green Avenue, Suite 450<br />San Diego, CA 92101</span>
+                </li>
+                <li className="footer__section-item">
+                  <FaPhoneAlt className="footer__contact-icon" />
+                  <span>(672) 453-3612</span>
+                </li>
+                <li className="footer__section-item">
+                  <FaEnvelope className="footer__contact-icon" />
+                  <span>contact@greenworkscleaning.com</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
