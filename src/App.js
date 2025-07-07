@@ -5,6 +5,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Homepage from './pages/Homepage';
 import Contactpage from './pages/Contactpage';
 import Pricingpage from './pages/Pricingpage';
+import Servicepage from './pages/Servicepage';
 
 
 
@@ -27,6 +28,7 @@ const App = () => {
         <Route path='/' element={<Homepage />} />
           <Route path='/contact' element={<Contactpage />} />
           <Route path='/pricing-details' element={<Pricingpage />} />
+          <Route path='/services' element={<Servicepage/> } />
 
 
 

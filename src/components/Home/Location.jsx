@@ -31,19 +31,19 @@ export default function Location() {
           <div className="location-map">
             <div className="map-wrapper">
               <img 
-                src="./dottedmap.jpg" 
+                src="dottedmap.jpg" 
                 alt="Service coverage map" 
                 className="map-image"
                 loading="lazy"
               />
               <div className="map-overlay"></div>
+              <div className="map-highlight">
+                <div className="highlight-circle"></div>
+                <div className="highlight-glow"></div>
+                <div className="pulse-effect"></div>
+              </div>
+              <div className="map-label">Seattle Metro Area</div>
             </div>
-            <div className="map-highlight" aria-hidden="true">
-              <div className="pulse-effect"></div>
-              <div className="highlight-circle"></div>
-              <div className="highlight-glow"></div>
-            </div>
-            <div className="map-label">Greater Seattle Area</div>
           </div>
 
           {/* Cities List */}
