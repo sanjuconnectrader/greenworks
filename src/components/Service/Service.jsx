@@ -258,19 +258,19 @@ const FEATURES = [
 
 const TESTIMONIALS = [
   {
-    name: "Sarah Johnson",
+    name: "Joseph Alex",
     role: "Homeowner",
     content: "The team transformed my carpets completely. They look brand new and the pet odors are completely gone. Highly recommend their services!",
     rating: 5
   },
   {
-    name: "Michael Chen",
+    name: "Sarah Alexander",
     role: "Property Manager",
     content: "Consistently excellent service for our apartment complex. The hardwood floor cleaning has saved us thousands in refinishing costs.",
     rating: 5
   },
   {
-    name: "Emily Rodriguez",
+    name: "Emily john",
     role: "Business Owner",
     content: "Our office tile floors had years of buildup. After their cleaning, the grout looks like it was just installed. Professional and efficient.",
     rating: 4
