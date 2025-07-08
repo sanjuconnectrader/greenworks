@@ -88,8 +88,8 @@
 .btn__icon--left {
   margin-right: 8px;
   font-size: 14px;
+  transform: scaleX(-1); /* Flips the icon horizontally */
 }
-
 .btn--outline {
   background: transparent;
   color: white;
