@@ -121,7 +121,7 @@
 
 @media (max-width: 576px) {
   .aboutheader {
-    height: 60vh;
+    height: 70vh;
     min-height: 350px;
   }
 
@@ -144,8 +144,10 @@
 
 @media (max-width: 400px) {
   .aboutheader {
-    height: 65vh;
-    min-height: 300px;
+    height: 75vh;
+    min-height: 400px;
+    
+  
   }
 
   .aboutheader__content h1 {

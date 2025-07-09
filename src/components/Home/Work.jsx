@@ -5,25 +5,21 @@ const SLIDES = [
   {
     before: "./pic1-before.jpeg",
     after: "./pic1-after.jpeg",
-   
     description: "Complete deep cleaning of heavily soiled living room carpet"
   },
   {
     before: "./pic2-before.jpeg",
     after: "./pic3-after.jpeg",
-   
     description: "Commercial carpet cleaning for high-traffic office area"
   },
   {
     before: "./pic3.1-before.jpeg",
     after: "./pic3.2-after.jpeg",
- 
     description: "Eco-friendly cleaning solution for allergy-sensitive bedroom"
   },
   {
     before: "./pic4-before.jpeg",
     after: "./pic4-after.jpeg",
-  
     description: "Specialized treatment for worn staircase carpeting"
   }
 ];
@@ -56,26 +52,34 @@ function BeforeAfterSlider({ before, after, title, description, isFirst }) {
     updatePosition(e.clientX ?? e.touches[0].clientX);
   };
 
-  const handleInteractionMove = (e) => {
+  const handleInteractionMove = useCallback((e) => {
     if (!isDragging) return;
+    e.preventDefault();
     updatePosition(e.clientX ?? e.touches[0].clientX);
-  };
+  }, [isDragging, updatePosition]);
 
-  const stopInteraction = () => setIsDragging(false);
+  const stopInteraction = useCallback(() => setIsDragging(false), []);
 
   useEffect(() => {
-    document.addEventListener('mouseup', stopInteraction);
-    document.addEventListener('touchend', stopInteraction);
-    document.addEventListener('mousemove', handleInteractionMove);
-    document.addEventListener('touchmove', handleInteractionMove);
-    
-    return () => {
-      document.removeEventListener('mouseup', stopInteraction);
-      document.removeEventListener('touchend', stopInteraction);
+    if (isDragging) {
+      document.addEventListener('mousemove', handleInteractionMove);
+      document.addEventListener('touchmove', handleInteractionMove, { passive: false });
+      document.addEventListener('mouseup', stopInteraction);
+      document.addEventListener('touchend', stopInteraction);
+    } else {
       document.removeEventListener('mousemove', handleInteractionMove);
       document.removeEventListener('touchmove', handleInteractionMove);
+      document.removeEventListener('mouseup', stopInteraction);
+      document.removeEventListener('touchend', stopInteraction);
+    }
+
+    return () => {
+      document.removeEventListener('mousemove', handleInteractionMove);
+      document.removeEventListener('touchmove', handleInteractionMove);
+      document.removeEventListener('mouseup', stopInteraction);
+      document.removeEventListener('touchend', stopInteraction);
     };
-  }, [isDragging]);
+  }, [isDragging, handleInteractionMove, stopInteraction]);
 
   const handleKeyDown = (e) => {
     if (e.key === 'ArrowLeft') setPosition(p => Math.max(0, p - 5));
@@ -88,8 +92,8 @@ function BeforeAfterSlider({ before, after, title, description, isFirst }) {
       <figure
         ref={containerRef}
         className="slider-figure"
-        onMouseMove={handleInteractionMove}
-        onTouchMove={handleInteractionMove}
+        onMouseDown={handleInteractionStart}
+        onTouchStart={handleInteractionStart}
       >
         {/* After image */}
         <img 
@@ -104,7 +108,7 @@ function BeforeAfterSlider({ before, after, title, description, isFirst }) {
           src={before}
           alt="Before cleaning"
           className="slider-image slider-image-before"
-          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+          style={{ clipPath: `polygon(0% 0%, ${position}% 0%, ${position}% 100%, 0% 100%)` }}
         />
         
         {/* Divider line */}

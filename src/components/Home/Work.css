@@ -1,4 +1,3 @@
-/* Work.css */
 :root {
   --primary-color: #0f71b4;
   --primary-dark: #0a568d;
@@ -89,6 +88,7 @@
   margin: 0;
   isolation: isolate;
   cursor: ew-resize;
+  touch-action: none;
 }
 
 .slider-image {
@@ -100,11 +100,11 @@
   object-fit: cover;
   pointer-events: none;
   user-select: none;
+  -webkit-user-drag: none;
 }
 
 .slider-image-before {
   z-index: 2;
-  transition: clip-path 0.2s ease-out;
 }
 
 .slider-image-after {
@@ -140,9 +140,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: var(--transition);
+  transition: transform 0.1s ease;
   box-shadow: var(--shadow-md);
   padding: 0;
+  touch-action: none;
 }
 
 .slider-handle:hover, .slider-handle:focus {
