@@ -149,6 +149,7 @@
 .slider-handle:hover, .slider-handle:focus {
   background-color: var(--primary-dark);
   transform: translate(-50%, -50%) scale(1.05);
+   
   outline: none;
 }
 
@@ -159,6 +160,10 @@
 .slider-handle-icon {
   color: var(--white);
   display: flex;
+   transform: rotate(90deg); 
+
+
+
 }
 
 /* Labels */
