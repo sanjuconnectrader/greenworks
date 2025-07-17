@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaArrowRight, FaCheck, FaPhone, FaCalendarAlt, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const backgroundUrl = `${process.env.PUBLIC_URL}/header-image.jpg`;
@@ -13,7 +14,7 @@ const Header = () => {
   return (
     <header className="header">
       {/* Info Bar - Fixed at the top */}
-   
+
 
       {/* Hero Section */}
       <div
@@ -55,14 +56,14 @@ const Header = () => {
               </div>
 
               <div className="hero-cta">
-                <button className="cta-primary">
+                <a href="/contact" className="cta-primary ">
                   <span>Schedule Service</span>
                   <FaArrowRight className="cta-icon" />
-                </button>
-                <button className="cta-secondary">
-                  <span>Learn More</span>
+                </a>
+                <Link to="/about" className="cta-secondary">
+                  <span>Learn More</span>
                   <div className="hover-effect" />
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -81,15 +82,11 @@ const Header = () => {
                 <div className="form-group">
                   <input type="tel" placeholder="Phone Number" required />
                 </div>
+
                 <div className="form-group">
-                  <select required>
-                    <option value="">Service Needed</option>
-                    <option value="carpet">Carpet Cleaning</option>
-                    <option value="upholstery">Upholstery Cleaning</option>
-                    <option value="rug">Rug Cleaning</option>
-                    <option value="other">Other</option>
-                  </select>
+                  <input type="text" placeholder="Address" required />
                 </div>
+
                 <div className="form-group">
                   <textarea placeholder="Additional Details" />
                 </div>

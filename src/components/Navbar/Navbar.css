@@ -19,7 +19,15 @@
   padding: 10px 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+.navbar__buttons{
+  text-decoration: none;
+}
 
+.btn--primary{text-decoration: none;}
+
+.btn--outline{
+  text-decoration: none;
+}
 .navbar__container {
   display: flex;
   justify-content: space-between;

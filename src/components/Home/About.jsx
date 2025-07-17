@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./About.css";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const imageRef = useRef(null);
@@ -33,9 +34,9 @@ const About = () => {
           {/* Image Section */}
           <div className="About-home-image-container" ref={imageRef}>
             <div className="About-home-image-wrapper">
-              <img 
-                src="./team.jpeg" 
-                alt="Professional carpet cleaning service" 
+              <img
+                src="./team.jpeg"
+                alt="Professional carpet cleaning service"
                 className="About-home-image"
                 loading="lazy"
               />
@@ -52,13 +53,13 @@ const About = () => {
           <div className="About-home-content" ref={contentRef}>
             <div className="About-home-content-wrapper">
               <div className="About-home-section-header">
-               
+
                 <h2 className="About-home-title">
                   <span className="About-home-title-text">About Us</span>
                   <span className="About-home-title-underline"></span>
                 </h2>
               </div>
-              
+
               <div className="About-home-description">
                 <p className="About-home-description-paragraph">
                   As a family-owned and locally operated carpet cleaning business in Seattle,
@@ -87,14 +88,27 @@ const About = () => {
                 </div>
               </div>
 
-              <button className="About-home-cta-button">
+
+              <Link to="/services" className="About-home-cta-button">
                 <span className="About-home-button-text">Explore Services</span>
                 <span className="About-home-button-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 12H19M19 12L12 5M19 12L12 19"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>

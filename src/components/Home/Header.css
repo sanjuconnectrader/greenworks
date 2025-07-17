@@ -664,3 +664,7 @@ button:focus, input:focus, select:focus, textarea:focus {
   outline: 2px solid var(--clr-primary);
   outline-offset: 2px;
 }
+
+.cta-secondary{
+  text-decoration: none;
+}

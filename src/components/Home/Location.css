@@ -505,3 +505,7 @@
     letter-spacing: 0.5px;
   }
 }
+
+.cta-primary{
+  text-decoration: none;
+}

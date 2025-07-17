@@ -281,11 +281,7 @@ const AccordionItem = ({ title, body, details, icon, defaultOpen = false }) => {
   const [open, setOpen] = useState(defaultOpen);
   
   return (
-    <motion.li 
-      className={`acc-item ${open ? "is-open" : ""}`}
-      whileHover={{ scale: 1.01 }}
-      transition={{ type: "spring", stiffness: 400, damping: 10 }}
-    >
+    <div className={`acc-item ${open ? "is-open" : ""}`}>
       <button
         className="acc-btn"
         onClick={() => setOpen(!open)}
@@ -321,35 +317,22 @@ const AccordionItem = ({ title, body, details, icon, defaultOpen = false }) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.li>
+    </div>
   );
 };
 
 const ServiceBlock = ({ heading, image, steps, disclaimer, reverse, icon, benefits }) => {
   return (
-    <motion.div 
-      className={`service-block ${reverse ? "reverse" : ""}`}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6 }}
-    >
+    <div className={`service-block ${reverse ? "reverse" : ""}`}>
       <div className="service-img-container">
-        <motion.figure 
-          className="service-img"
-          whileHover={{ scale: 1.02 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
+        <figure className="service-img">
           <img src={image} alt={heading} loading="lazy" />
           <div className="image-overlay"></div>
           <div className="image-highlight"></div>
-          <motion.div 
-            className="service-icon-badge"
-            whileHover={{ rotate: 10, scale: 1.1 }}
-          >
+          <div className="service-icon-badge">
             {icon}
-          </motion.div>
-        </motion.figure>
+          </div>
+        </figure>
       </div>
 
       <div className="service-acc">
@@ -360,17 +343,10 @@ const ServiceBlock = ({ heading, image, steps, disclaimer, reverse, icon, benefi
         
         <div className="service-benefits">
           {benefits.map((benefit, index) => (
-            <motion.div 
-              key={index} 
-              className="benefit-item"
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-            >
+            <div key={index} className="benefit-item">
               <span className="benefit-icon">✓</span>
               <span>{benefit}</span>
-            </motion.div>
+            </div>
           ))}
         </div>
         
@@ -385,35 +361,25 @@ const ServiceBlock = ({ heading, image, steps, disclaimer, reverse, icon, benefi
         </ul>
         
         {disclaimer && (
-          <motion.div 
-            className="service-note"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
+          <div className="service-note">
             <div className="note-icon">ℹ️</div>
             <p>{disclaimer}</p>
-          </motion.div>
+          </div>
         )}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
 const FeatureCard = ({ icon, title, description }) => {
   return (
-    <motion.div 
-      className="feature-card"
-      whileHover={{ y: -5, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)" }}
-      transition={{ type: "spring", stiffness: 300 }}
-    >
+    <div className="feature-card">
       <div className="feature-icon-container">
         {icon}
       </div>
       <h3 className="feature-title">{title}</h3>
       <p className="feature-description">{description}</p>
-    </motion.div>
+    </div>
   );
 };
 
@@ -426,18 +392,14 @@ const TestimonialCard = ({ name, role, content, rating }) => {
   ));
   
   return (
-    <motion.div 
-      className="testimonial-card"
-      whileHover={{ y: -5 }}
-      transition={{ type: "spring", stiffness: 300 }}
-    >
+    <div className="testimonial-card">
       <div className="testimonial-rating">{stars}</div>
       <p className="testimonial-content">"{content}"</p>
       <div className="testimonial-author">
         <h4 className="testimonial-name">{name}</h4>
         <p className="testimonial-role">{role}</p>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -445,34 +407,16 @@ const ServiceSection = () => {
   return (
     <section className="service" id="services">
       <div className="service-container">
-        <motion.div 
-          className="section-header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <motion.h2 
-            className="section-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+        <div className="section-header">
+          <h2 className="section-title">
             Premium Cleaning Solutions
             <span className="title-decoration"></span>
-          </motion.h2>
+          </h2>
 
-          <motion.p 
-            className="section-description"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
+          <p className="section-description">
             Professional cleaning services tailored to your specific needs with our certified eco-friendly process
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
         <div className="features-grid">
           {FEATURES.map((feature, index) => (
@@ -494,15 +438,9 @@ const ServiceSection = () => {
         </div>
 
         <div className="testimonials-section">
-          <motion.h3 
-            className="testimonials-heading"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <h3 className="testimonials-heading">
             What Our Clients Say
-          </motion.h3>
+          </h3>
           
           <div className="testimonials-grid">
             {TESTIMONIALS.map((testimonial, index) => (

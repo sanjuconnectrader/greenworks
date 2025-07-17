@@ -1,6 +1,7 @@
 import React from "react";
 import { FaArrowRight, FaPaw } from "react-icons/fa";
 import "./PetOdorHero.css";
+import { Link } from "react-router-dom";
 
 // Import the background image properly
 const BG = "./bg-clip.jpg";
@@ -63,15 +64,14 @@ export default function PetOdorHero() {
         </p>
 
         {/* CTA button with icon */}
-        <button
-          type="button"
-          className="pet-hero__btn"
-          onClick={handleScheduleClick}
-          aria-label="Schedule a cleaning"
-        >
-          <span>Schedule a Cleaning</span>
-          <FaArrowRight className="pet-hero__btn-icon" aria-hidden="true" />
-        </button>
+      <Link
+  to="/contact"
+  className="pet-hero__btn"
+  aria-label="Schedule a cleaning"
+>
+  <span>Schedule a Cleaning</span>
+
+</Link>
       </div>
     </section>
   );

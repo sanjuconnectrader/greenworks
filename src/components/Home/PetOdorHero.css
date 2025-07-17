@@ -30,7 +30,9 @@
   isolation: isolate;
   padding-top: 80px; /* Space for wave */
 }
-
+.pet-hero__btn{
+  text-decoration: none;
+}
 /* Decorative wave */
 .pet-hero__wave {
   position: absolute;

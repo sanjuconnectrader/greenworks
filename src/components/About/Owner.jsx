@@ -1,21 +1,13 @@
 import React from "react";
 import "./Owner.css";
-import { FaLeaf, FaAward, FaUsers, FaShieldAlt } from "react-icons/fa";
 
 const Owner = () => {
   const ownerPhoto = `${process.env.PUBLIC_URL}/owner.jpg`;
 
-  const stats = [
-   
-  ];
-
   return (
     <section className="owner" aria-labelledby="owner-heading">
-      <div className="owner__decoration owner__decoration--circle"></div>
-      <div className="owner__decoration owner__decoration--diamond"></div>
-      
       <div className="owner__container">
-        {/* ───────── Left : Image ───────── */}
+        {/* Left: Image */}
         <figure className="owner__photo-wrapper">
           <div className="owner__photo-overlay"></div>
           <img
@@ -24,20 +16,9 @@ const Owner = () => {
             className="owner__photo"
             loading="lazy"
           />
-          <div className="owner__stats">
-            {stats.map((stat, index) => (
-              <div key={index} className="owner__stat-item">
-                <div className="owner__stat-content">
-                  {stat.icon}
-                  <span className="owner__stat-value">{stat.value}</span>
-                  <span className="owner__stat-label">{stat.label}</span>
-                </div>
-              </div>
-            ))}
-          </div>
         </figure>
 
-        {/* ───────── Right : Content ───────── */}
+        {/* Right: Content */}
         <div className="owner__content">
           <div className="owner__header">
             <span className="owner__pre-title">Meet Our Founder</span>
@@ -60,9 +41,11 @@ const Owner = () => {
               safe products, creating healthier living spaces without compromising effectiveness.
             </p>
 
-            <div className="owner__signature">
-         
-            </div>
+            <p className="owner__paragraph">
+              Beyond business success, Sarah is committed to educating communities about sustainable living.
+              She regularly speaks at industry conferences and mentors young entrepreneurs passionate about
+              combining profitability with environmental responsibility.
+            </p>
           </div>
         </div>
       </div>

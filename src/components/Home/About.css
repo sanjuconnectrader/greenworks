@@ -50,6 +50,7 @@
   transform: translateY(50px);
   opacity: 0;
   transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  margin-top: 100px;
 }
 
 .About-home-image-container.in-view {
@@ -517,4 +518,8 @@
     width: 100%;
     padding: 1rem 1.5rem;
   }
+}
+
+.About-home-cta-button{
+  text-decoration: none;
 }

@@ -11,7 +11,6 @@ const Aboutheader = () => {
       <div className="aboutheader__content">
         <h1>About Us</h1>
         <div className="aboutheader__underline"></div>
-      
       </div>
     </section>
   );

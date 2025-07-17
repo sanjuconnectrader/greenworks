@@ -1,281 +1,124 @@
-/* =============================================
-   Premium Owner Section Styling
-   ============================================= */
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
-
-:root {
-  /* Color Palette */
-
-  --clr-primary-light: rgba(42, 157, 143, 0.1);
-
-  --clr-text-dark: #264653;
-  --clr-text-medium: #5a7d8a;
-  --clr-text-light: #8ab0b8;
-  --clr-bg: #f8f9fa;
-  --clr-white: #ffffff;
-  --clr-border: rgba(0, 0, 0, 0.08);
-  
-  /* Typography */
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Montserrat', sans-serif;
-  
-  /* Spacing & Effects */
-  --radius-lg: 1.5rem;
-  --radius-xl: 2rem;
-  --shadow-md: 0 15px 30px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.12);
-  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Base Styles */
 .owner {
   position: relative;
-  padding: clamp(4rem, 8vw, 10rem) 0;
-  background: var(--clr-bg);
+  padding: 6rem 2rem;
+  background-color: #f9f9f9;
   overflow: hidden;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .owner__container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(1.5rem, 5vw, 4rem);
-  display: grid;
-  grid-template-columns: minmax(300px, 40%) 1fr;
-  gap: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
   align-items: center;
-  position: relative;
-  z-index: 2;
 }
 
-/* Decorative Elements */
-.owner__decoration {
-  position: absolute;
-  border-radius: 50%;
-  background: var(--clr-primary-light);
-  z-index: 1;
-}
-
-.owner__decoration--circle {
-  width: 600px;
-  height: 600px;
-  top: -300px;
-  right: -300px;
-  opacity: 0.6;
-}
-
-.owner__decoration--diamond {
-  width: 400px;
-  height: 400px;
-  bottom: -200px;
-  left: -200px;
-  transform: rotate(45deg);
-  opacity: 0.4;
-}
-
-/* Image Section */
 .owner__photo-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1.1;
-  border-radius: var(--radius-xl);
+  max-width: 500px;
+  aspect-ratio: 1/1.2;
+  margin: 0;
+  border-radius: 0 50px 0 50px;
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  transform-style: preserve-3d;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.1);
 }
 
 .owner__photo-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 30%);
-  z-index: 2;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 30%);
+  z-index: 1;
 }
 
 .owner__photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  transition: var(--transition);
+  transition: transform 0.5s ease;
 }
 
 .owner__photo-wrapper:hover .owner__photo {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
-/* Stats Grid */
-.owner__stats {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  padding: 2rem;
-  z-index: 3;
-}
-
-.owner__stat-item {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: var(--transition);
-}
-
-.owner__stat-item:hover {
-  transform: translateY(-5px);
-  background: var(--clr-white);
-}
-
-.owner__stats-icon {
-  font-size: 1.5rem;
-  color: var(--clr-primary);
-  margin-bottom: 0.5rem;
-}
-
-.owner__stat-value {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--clr-primary-dark);
-  line-height: 1;
-  margin-bottom: 0.25rem;
-}
-
-.owner__stat-label {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--clr-text-medium);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Content Section */
-.owner__header {
-  margin-bottom: 2.5rem;
+.owner__content {
+  width: 100%;
+  max-width: 600px;
 }
 
 .owner__pre-title {
-  display: inline-block;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--clr-primary);
+  display: block;
+  font-size: 1rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  color: #4a8b58;
   margin-bottom: 1rem;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.owner__pre-title::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 1rem;
-  height: 2px;
-  background: var(--clr-primary);
+  font-weight: 600;
 }
 
 .owner__name {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: 2.5rem;
   font-weight: 700;
-  line-height: 1.1;
-  color: var(--clr-text-dark);
+  line-height: 1.2;
+  color: #222;
+  margin: 0 0 0.5rem 0;
 }
 
 .owner__name--highlight {
-  color: var(--clr-primary);
+  color: #4a8b58;
+  position: relative;
+}
+
+.owner__name--highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(74, 139, 88, 0.2);
+  z-index: -1;
 }
 
 .owner__title {
-  margin: 0.5rem 0 0;
-  font-size: 1.25rem;
-  color: var(--clr-text-medium);
-  font-weight: 500;
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0 0 2rem 0;
+  font-weight: 400;
 }
 
 .owner__paragraph {
-  margin-bottom: 1.5rem;
+  font-size: 1rem;
   line-height: 1.8;
-  color: var(--clr-text-medium);
-  font-size: 1.1rem;
+  color: #444;
+  margin: 0 0 1.5rem 0;
 }
 
-.owner__signature {
-  margin-top: 2rem;
-}
-
-.owner__signature-img {
-  height: 60px;
-  opacity: 0.9;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
+@media (min-width: 992px) {
   .owner__container {
-    gap: 4rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
   }
-  
-  .owner__stats {
-    padding: 1.5rem;
-  }
-  
-  .owner__stat-item {
-    padding: 1rem;
-  }
-}
 
-@media (max-width: 768px) {
-  .owner__container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  
   .owner__photo-wrapper {
-    max-width: 500px;
-    margin: 0 auto;
-    aspect-ratio: 1 / 1;
+    max-width: 45%;
   }
-  
+
   .owner__content {
-    text-align: center;
+    max-width: 50%;
+    padding-top: 3rem;
   }
-  
-  .owner__pre-title {
-    padding-left: 0;
-  }
-  
-  .owner__pre-title::before {
-    display: none;
-  }
-  
-  .owner__stats {
-    max-width: 400px;
-    margin: 0 auto;
+
+  .owner__name {
+    font-size: 3rem;
   }
 }
 
-@media (max-width: 480px) {
-  .owner__stats {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-    padding: 1rem;
-  }
-  
-  .owner__stat-item {
-    padding: 1rem;
-  }
-  
-  .owner__name {
-    font-size: 2.5rem;
+@media (min-width: 1200px) {
+  .owner {
+    padding: 8rem 2rem;
   }
 }

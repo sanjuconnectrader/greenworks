@@ -13,14 +13,14 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  /* ────────── EFFECTS ────────── */
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-
+  /* ─────────── DATA ─────────── */
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -28,6 +28,9 @@ const Navbar = () => {
     { name: 'Pricing', path: '/pricing-details' },
     { name: 'Contact', path: '/contact' },
   ];
+
+  /* ───────── HANDLERS ───────── */
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
@@ -40,10 +43,7 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <img
-            src="./green-logo.png"
-            alt="LushLandscapes"
-          />
+          <img src="./green-logo.png" alt="LushLandscapes" />
         </motion.a>
 
         {/* Nav links */}
@@ -63,45 +63,49 @@ const Navbar = () => {
 
           {/* Mobile buttons */}
           <div className="navbar__mobile-buttons">
-            <motion.button
+            <motion.a
+              href="tel:+12068996862"
               className="btn btn--outline"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => setMenuOpen(false)}
             >
-         
-              Call-Us-Now
-            </motion.button>
+              Call Us Now {/* keep text concise on mobile */}
+            </motion.a>
 
-            <motion.button
+            <motion.a
+              href="/contact"
               className="btn btn--primary"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => setMenuOpen(false)}
             >
-             
-              Schedule Now
-            </motion.button>
+              Schedule Now
+            </motion.a>
           </div>
         </div>
 
         {/* Desktop buttons */}
         <div className="navbar__buttons">
-          <motion.button
+          <motion.a
+            href="tel:+12068996862"
             className="btn btn--outline"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <FaPhone className="btn__icon--left" />
-            Call Us Now
-          </motion.button>
+            Call Us Now
+          </motion.a>
 
-          <motion.button
+          <motion.a
+            href="/contact"
             className="btn btn--primary"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <FaCalendarAlt className="btn__icon--left" />
-            Schedule Now
-          </motion.button>
+            Schedule Now
+          </motion.a>
         </div>
 
         {/* Mobile menu toggle */}
@@ -112,11 +116,7 @@ const Navbar = () => {
           whileTap={{ scale: 0.9 }}
         >
           {menuOpen ? (
-            <motion.div
-              initial={{ rotate: 0 }}
-              animate={{ rotate: 180 }}
-              transition={{ duration: 0.3 }}
-            >
+            <motion.div initial={{ rotate: 0 }} animate={{ rotate: 180 }} transition={{ duration: 0.3 }}>
               <FaTimes />
             </motion.div>
           ) : (

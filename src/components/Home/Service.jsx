@@ -4,31 +4,31 @@ import "./Service.css";
 
 const cards = [
   {
-    title: "Deep Carpet Cleaning",
+    title: "CARPET CLEANING",
     image: "./service1.jpg",
-    details: "Our professional deep cleaning removes embedded dirt, allergens, and stains to restore your carpets to like-new condition. Using eco-friendly solutions and advanced equipment.",
-    button: "Learn More",
-    buttonLink: "#",
-  },
-  {
-    title: "Stain Removal",
-    image: "./service2.jpg",
-    details: "Specialized treatment for tough stains including wine, pet accidents, coffee, and more. We use industry-leading techniques to eliminate stains without damaging fibers.",
+    details: "Our five-star Seattle carpet cleaning process ensures that your carpet is cleaned thoroughly with no details missed. The carpet cleaning solutions we use are family and pet safe and will leave your carpet soft so that it stays cleaner for longer. ",
     button: "View Services",
     buttonLink: "#",
   },
   {
-    title: "Pet Odor Treatment",
-    image: "./service3.jpg",
-    details: "Eliminate pet odors at the source with our enzymatic treatments. Safe for pets and children, our process neutralizes odors rather than just masking them.",
-    button: "Pet Solutions",
+    title: "UPHOLSTERY CLEANING",
+    image: "./service2.jpg",
+    details: "Upholstery and furniture are often the most neglected furnishing in your home or office. Carpet cleaning is very common but having the furniture maintained is a must as well. ",
+    button: "View Services",
     buttonLink: "#",
   },
   {
-    title: "Commercial Cleaning",
+    title: "TILE & GROUT CLEANING",
+    image: "./service3.jpg",
+    details: "Cleaning technology has come a long way and we now have phenomenally safe tile and grout cleaning products and tools for many different types of tile and grout flooring.",
+    button: "View Services",
+    buttonLink: "#",
+  },
+  {
+    title: "HARDWOOD FLOOR CLEANING",
     image: "./service4.jpg",
-    details: "Professional cleaning for offices, hotels, and commercial spaces. We work around your schedule with fast-drying methods to minimize business disruption.",
-    button: "Business Services",
+    details: "Hardwood flooring has made a comeback as a top choice for flooring in many homes. The natural colors and staining options can set off any decor.",
+    button: "View Services",
     buttonLink: "#",
   },
 ];
