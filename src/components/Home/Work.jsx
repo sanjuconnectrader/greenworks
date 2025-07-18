@@ -30,7 +30,6 @@ function BeforeAfterSlider({ before, after, title, description, isFirst }) {
   const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check for mobile devices
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -95,26 +94,19 @@ function BeforeAfterSlider({ before, after, title, description, isFirst }) {
         onMouseDown={handleInteractionStart}
         onTouchStart={handleInteractionStart}
       >
-        {/* After image */}
         <img 
           src={after} 
           alt="After cleaning" 
           className="slider-image slider-image-after" 
           loading="lazy"
         />
-        
-        {/* Before image with dynamic clipping */}
         <img
           src={before}
           alt="Before cleaning"
           className="slider-image slider-image-before"
           style={{ clipPath: `polygon(0% 0%, ${position}% 0%, ${position}% 100%, 0% 100%)` }}
         />
-        
-        {/* Divider line */}
         <div className="slider-divider" style={{ left: `${position}%` }} />
-        
-        {/* Interactive handle */}
         <button
           className="slider-handle"
           style={{ left: `${position}%` }}
@@ -129,8 +121,6 @@ function BeforeAfterSlider({ before, after, title, description, isFirst }) {
             </svg>
           </div>
         </button>
-        
-        {/* Labels - only show on desktop */}
         {!isMobile && (
           <>
             <span className="slider-label slider-label-before">Before</span>
