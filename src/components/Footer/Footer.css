@@ -206,9 +206,9 @@
 
 /* Row Sections Layout */
 .footer__row-sections {
-  flex: 1;
+  flex: 0.9;
   display: flex;
-  gap: 0.1rem;
+  gap: 0.011rem;
   justify-content: space-between;
 }
 

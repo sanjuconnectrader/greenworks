@@ -137,15 +137,15 @@ const Footer = () => {
               <ul className="footer__section-list">
                 <li className="footer__section-item">
                   <FaMapMarkerAlt className="footer__contact-icon" />
-                  <span>123 Green Avenue, Suite 450<br />San Diego, CA 92101</span>
+                  <span>16824 44th Ave W Unit-170<br />Lynnwood, WA 98037</span>
                 </li>
                 <li className="footer__section-item">
                   <FaPhoneAlt className="footer__contact-icon" />
-                  <span>(672) 453-3612</span>
+                  <span>(206) 899-6862</span>
                 </li>
                 <li className="footer__section-item">
                   <FaEnvelope className="footer__contact-icon" />
-                  <span>contact@greenworkscleaning.com</span>
+                  <span>info@greenworkscarpetcleaning.com</span>
                 </li>
               </ul>
             </div>

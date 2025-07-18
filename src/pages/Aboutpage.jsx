@@ -1,18 +1,26 @@
 import Navbar from '../components/Navbar/Navbar'
-import AboutHeader from '../components/About/Aboutheader'
-import Aboutdetails from '../components/About/Aboutdetails'
-import Owner from '../components/About/Owner'
-import Meetteam from '../components/About/Meetteam'
+
 import Footer from '../components/Footer/Footer'
+import GreenworksIntro from '../components/About/GreenworksIntro'
+import Book from '../components/About/Book'
+import WhatWeDo from '../components/About/WhatWeDo'
+import Aboutdetails from '../components/About/Aboutdetails'
+
 
 const Aboutpage = () => {
     return (
         <div>
             <Navbar />
-            <AboutHeader />
-            <Owner/>
-            <Meetteam/>
+            <GreenworksIntro/>
+            <Book/>
+            <WhatWeDo/>
             <Aboutdetails/>
+
+    
+           
+    
+      
+           
             <Footer/>
         </div>
     )

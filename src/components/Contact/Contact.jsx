@@ -1,22 +1,48 @@
 import React, { useRef, useState } from "react";
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaPaperPlane, FaHome } from "react-icons/fa";
 import { motion } from "framer-motion";
+import axios from "axios";
 import "./Contact.css";
 
 const Contact = () => {
   const backgroundUrl = `${process.env.PUBLIC_URL}/header-image.jpg`;
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   const formRef = useRef();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    formRef.current.reset();
-    
-    // Reset submission status after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-    }, 3000);
+    setIsLoading(true);
+    setError(null);
+
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      phone: e.target.phone.value,
+      address: e.target.address.value,
+      message: e.target.message.value
+    };
+
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_BASE_URL}/contact`,
+        formData
+      );
+
+      if (response.status === 201) {
+        setIsSubmitted(true);
+        formRef.current.reset();
+        setTimeout(() => setIsSubmitted(false), 3000);
+      }
+    } catch (err) {
+      setError(
+        err.response?.data?.message || 
+        "Failed to send message. Please try again later."
+      );
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -55,7 +81,7 @@ const Contact = () => {
                 </div>
                 <div className="contactpage-text">
                   <div className="contactpage-label">Email Us</div>
-                  <div className="contactpage-value">contact@greenworks.com</div>
+                  <div className="contactpage-value">info@greenworkscarpetcleaning.com</div>
                   <a href="mailto:contact@greenworks.com" className="contactpage-link">
                     <span>Send a message</span>
                     <span className="contactpage-link-arrow">→</span>
@@ -73,7 +99,7 @@ const Contact = () => {
                 </div>
                 <div className="contactpage-text">
                   <div className="contactpage-label">Call Us</div>
-                  <div className="contactpage-value">+1 (555) 356-8888</div>
+                  <div className="contactpage-value">+1 (206) 899-6862</div>
                   <a href="tel:+15553568888" className="contactpage-link">
                     <span>Call now</span>
                     <span className="contactpage-link-arrow">→</span>
@@ -134,6 +160,7 @@ const Contact = () => {
               <input 
                 type="text" 
                 id="name" 
+                name="name"
                 placeholder=" "
                 required 
               />
@@ -145,6 +172,7 @@ const Contact = () => {
               <input 
                 type="email" 
                 id="email" 
+                name="email"
                 placeholder=" "
                 required 
               />
@@ -156,6 +184,7 @@ const Contact = () => {
               <input 
                 type="tel" 
                 id="phone" 
+                name="phone"
                 placeholder=" "
               />
               <label htmlFor="phone">Phone Number</label>
@@ -168,6 +197,7 @@ const Contact = () => {
                 <input 
                   type="text" 
                   id="address" 
+                  name="address"
                   placeholder=" "
                   required 
                 />
@@ -179,6 +209,7 @@ const Contact = () => {
             <div className="contactpage-form-group">
               <textarea 
                 id="message" 
+                name="message"
                 rows={4} 
                 placeholder=" "
                 required
@@ -192,10 +223,17 @@ const Contact = () => {
               className="contactpage-submit-btn"
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.98 }}
+              disabled={isLoading}
             >
-              <FaPaperPlane className="contactpage-btn-icon" />
-              <span>Send Message</span>
-              <div className="contactpage-btn-hover-effect" />
+              {isLoading ? (
+                <span>Sending...</span>
+              ) : (
+                <>
+                  <FaPaperPlane className="contactpage-btn-icon" />
+                  <span>Send Message</span>
+                  <div className="contactpage-btn-hover-effect" />
+                </>
+              )}
             </motion.button>
 
             {isSubmitted && (
@@ -206,6 +244,16 @@ const Contact = () => {
                 exit={{ opacity: 0 }}
               >
                 Message sent successfully!
+              </motion.div>
+            )}
+
+            {error && (
+              <motion.div 
+                className="contactpage-form-error-message"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
+                {error}
               </motion.div>
             )}
           </form>
