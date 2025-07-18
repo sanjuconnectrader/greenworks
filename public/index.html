@@ -2,42 +2,89 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <!-- Primary Meta Tags -->
+    <title>GreenWorks Carpet Cleaning | Top-Rated Cleaning Services in Lynnwood, WA</title>
+    <meta name="description" content="Professional carpet & upholstery cleaning services in Lynnwood, WA. GreenWorks offers eco-friendly, deep cleaning with same-day service. Call (206) 899-6862 for a free quote!">
+    <meta name="keywords" content="carpet cleaning, upholstery cleaning, rug cleaning, deep cleaning, eco-friendly cleaning, professional cleaners, Lynnwood cleaning service, Seattle area cleaning, stain removal, pet odor removal, green cleaning solutions, commercial cleaning, residential cleaning, steam cleaning, carpet shampooing, tile and grout cleaning">
+    
+    <!-- Open Graph / Facebook / Twitter Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.greenworkscarpetcleaning.com/">
+    <meta property="og:title" content="GreenWorks Carpet Cleaning | Professional Cleaning Services in Lynnwood">
+    <meta property="og:description" content="Eco-friendly carpet & upholstery cleaning services in Lynnwood, WA. Same-day service available. Call (206) 899-6862 today!">
+    <meta property="og:image" content="./green-logo.png">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GreenWorks Carpet Cleaning | Top-Rated Cleaning Services in Lynnwood, WA">
+    <meta name="twitter:description" content="Professional, eco-friendly carpet cleaning services in the Seattle area. Call (206) 899-6862 for a free estimate!">
+    <meta name="twitter:image" content="./green-logo.png">
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <!-- Favicon & App Icons -->
+    <link rel="icon" href="./green-logo.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Viewport & Theme -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2e7d32" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.greenworkscarpetcleaning.com" />
+    
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "GreenWorks Carpet Cleaning",
+      "image": "./green-logo.png",
+      "@id": "",
+      "url": "https://www.greenworkscarpetcleaning.com",
+      "telephone": "+12068996862",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "16824 44th Ave W Unit-170",
+        "addressLocality": "Lynnwood",
+        "addressRegion": "WA",
+        "postalCode": "98037",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 47.8279,
+        "longitude": -122.3053
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "priceRange": "$$",
+      "sameAs": [
+        "https://www.facebook.com/greenworkscarpetcleaning",
+        "https://www.instagram.com/greenworkscarpetcleaning",
+        "https://www.linkedin.com/company/greenworkscarpetcleaning"
+      ]
+    }
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <strong>GreenWorks Carpet Cleaning requires JavaScript to work properly. Please enable JavaScript to continue.</strong>
+      <p>Professional carpet & upholstery cleaning services in Lynnwood, WA. Call us at <a href="tel:2068996862">(206) 899-6862</a> or email <a href="mailto:info@greenworkscarpetcleaning.com">info@greenworkscarpetcleaning.com</a></p>
+      <p>Address: 16824 44th Ave W Unit-170, Lynnwood, WA 98037</p>
+    </noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    
+    <!-- Preload important resources -->
+    <link rel="preload" href="%PUBLIC_URL%/fonts/roboto.woff2" as="font" type="font/woff2" crossorigin>
   </body>
 </html>
