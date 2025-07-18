@@ -126,7 +126,7 @@
 /* Main Footer Content */
 .footer__main {
   padding: var(--section-spacing) 2rem;
-  background-color:#0a2540;
+  background-color: #0a2540;
   position: relative;
 }
 
@@ -146,7 +146,7 @@
 }
 
 .footer__main-container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -156,6 +156,7 @@
 /* Company Info */
 .footer__company {
   flex: 0 0 30%;
+  max-width: 30%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -209,7 +210,7 @@
   flex: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .footer__section {
@@ -264,11 +265,27 @@
   opacity: 1;
 }
 
+/* Contact Items */
+.footer__contact-item {
+  align-items: flex-start;
+}
+
 .footer__contact-icon {
   color: var(--accent-blue);
   font-size: 1rem;
   margin-top: 3px;
   min-width: 20px;
+}
+
+.footer__contact-text {
+  word-break: break-word;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+.footer__email {
+  word-break: break-all;
 }
 
 /* Footer Bottom */
@@ -337,22 +354,14 @@
 }
 
 /* Responsive Adjustments */
-/* Large Desktop (1440px and up) */
-@media (min-width: 1440px) {
+@media (max-width: 1199px) {
   .footer__main-container {
-    max-width: 1200px;
+    gap: 3rem;
   }
   
-  .footer__sections-grid {
-    gap: 1rem;
-  }
-}
-
-
-@media (min-width: 1200px) and (max-width: 1439px) {
-  .footer__main-container {
-    max-width: 1200px;
-    gap: 1rem;
+  .footer__company {
+    flex: 0 0 28%;
+    max-width: 28%;
   }
   
   .footer__sections-grid {
@@ -360,28 +369,10 @@
   }
 }
 
-/* Smaller Desktop/Laptop (1024px-1199px) */
-@media (min-width: 1024px) and (max-width: 1199px) {
-  .footer__main-container {
-    max-width: 1000px;
-    gap: 1rem;
-    margin-right: 90px;
-  }
-  
-  .footer__sections-grid {
-    gap: 1rem;
-  }
-  
-  .footer__company {
-    flex: 0 0 28%;
-  }
-}
-
-/* Tablet Landscape (768px-1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   .footer__main-container {
     flex-direction: column;
-    max-width: 800px;
+    gap: 3rem;
   }
   
   .footer__company {
@@ -389,47 +380,10 @@
     max-width: 100%;
     text-align: center;
     align-items: center;
-    margin-bottom: 2rem;
   }
   
-  .footer__sections-grid {
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-    gap: 2rem;
-  }
-  
-  .footer__cta {
-    padding: 4rem 2rem;
-  }
-}
-
-/* Tablet Portrait (600px-767px) */
-@media (min-width: 600px) and (max-width: 767px) {
-  .footer__main-container {
-    max-width: 600px;
-  }
-  
-  .footer__sections-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .footer__cta {
-    padding: 3.5rem 1.5rem;
-  }
-}
-
-/* Mobile (480px-599px) */
-@media (min-width: 480px) and (max-width: 599px) {
-  .footer__main-container {
-    max-width: 480px;
-  }
-  
-  .footer__sections-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .footer__section {
-    text-align: center;
+  .footer__social {
+    justify-content: center;
   }
   
   .footer__section-title::after {
@@ -437,19 +391,51 @@
     transform: translateX(-50%);
   }
   
+  .footer__section {
+    text-align: center;
+  }
+  
   .footer__section-item {
     justify-content: center;
+  }
+  
+  .footer__contact-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .footer__contact-icon {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer__sections-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer__cta {
+    padding: 3.5rem 1.5rem;
+  }
+  
+  .footer__main {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer__sections-grid {
+    grid-template-columns: 1fr;
   }
   
   .footer__cta {
     padding: 3rem 1rem;
   }
-}
-
-/* Small Mobile (below 480px) */
-@media (max-width: 479px) {
+  
   .footer__main {
-    padding: 3rem 1rem;
+    padding: 2.5rem 1rem;
   }
   
   .footer__bottom {
@@ -463,14 +449,6 @@
   
   .footer__legal-separator {
     display: none;
-  }
-  
-  .footer__cta {
-    padding: 2.5rem 1rem;
-  }
-  
-  .footer__cta-button {
-    padding: 0.875rem 2rem;
   }
 }
 

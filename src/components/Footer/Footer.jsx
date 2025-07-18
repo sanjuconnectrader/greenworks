@@ -86,7 +86,6 @@ const Footer = () => {
             <div className="footer__section">
               <h4 className="footer__section-title">Support</h4>
               <ul className="footer__section-list">
-               
                 <li className="footer__section-item">
                   <Link to="/contact" className="footer__section-link">
                     Contact
@@ -109,17 +108,17 @@ const Footer = () => {
             <div className="footer__section">
               <h4 className="footer__section-title">Contact Us</h4>
               <ul className="footer__section-list">
-                <li className="footer__section-item">
+                <li className="footer__section-item footer__contact-item">
                   <FaMapMarkerAlt className="footer__contact-icon" />
-                  <span>16824 44th Ave W Unit-170<br />Lynnwood, WA 98037</span>
+                  <span className="footer__contact-text">16824 44th Ave W Unit-170<br />Lynnwood, WA 98037</span>
                 </li>
-                <li className="footer__section-item">
+                <li className="footer__section-item footer__contact-item">
                   <FaPhoneAlt className="footer__contact-icon" />
-                  <span>(206) 899-6862</span>
+                  <span className="footer__contact-text">(206) 899-6862</span>
                 </li>
-                <li className="footer__section-item">
+                <li className="footer__section-item footer__contact-item">
                   <FaEnvelope className="footer__contact-icon" />
-                  <span>info@greenworkscarpetcleaning.com</span>
+                  <span className="footer__contact-text footer__email">info@greenworkscarpetcleaning.com</span>
                 </li>
               </ul>
             </div>
