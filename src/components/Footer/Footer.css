@@ -126,7 +126,7 @@
 /* Main Footer Content */
 .footer__main {
   padding: var(--section-spacing) 2rem;
-  background-color: var(--primary-dark);
+  background-color:#0a2540;
   position: relative;
 }
 
