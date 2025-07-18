@@ -137,7 +137,7 @@ const Footer = () => {
               Privacy Policy
             </Link>
             <span className="footer__legal-separator">|</span>
-            <Link to="/terms" className="footer__legal-link">
+            <Link to="/termsandcondition" className="footer__legal-link">
               Terms of Service
             </Link>
             <span className="footer__legal-separator">|</span>

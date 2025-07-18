@@ -231,6 +231,7 @@
   .greenworks-intro {
     --section-padding: clamp(4rem, 8vw, 6rem);
     --text-gap: 1.5rem;
+     margin-top: 80px;
   }
   
   .greenworks-intro__heading {
@@ -240,6 +241,7 @@
   
   .greenworks-intro__features {
     grid-template-columns: 1fr;
+    margin-bottom: 60px;
   }
   
   .greenworks-intro__image-wrapper {
@@ -255,6 +257,7 @@
   
   .greenworks-intro__container {
     gap: 3rem;
+    margin-top: 80x;
   }
   
   .greenworks-intro__heading {
@@ -278,6 +281,7 @@
 @media (max-width: 360px) {
   .greenworks-intro {
     --section-padding: 2.5rem 0;
+     margin-top: 80x;
   }
   
   .greenworks-intro__heading {

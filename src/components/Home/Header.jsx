@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 
 const API_BASE =
-  process.env.REACT_APP_API_BASE || 'http://localhost:8080/api';
+  process.env.REACT_APP_API_BASE || 'https://greenwork-booking-form.onrender.com';
 
 const Header = () => {
   const backgroundUrl = `${process.env.PUBLIC_URL}/header-image.jpg`;
@@ -36,7 +36,7 @@ const Header = () => {
     setIsSubmitting(true);
     setError('');
     try {
-      const res = await fetch(`${API_BASE}/bookings`, {
+      const res = await fetch(`${API_BASE}/api/bookings`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

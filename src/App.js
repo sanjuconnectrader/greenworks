@@ -9,6 +9,7 @@ import Servicepage from './pages/Servicepage';
 import Aboutpage from './pages/Aboutpage';
 import Privacypage from './pages/Privacypage';
 import Termspage from './pages/Termspage';
+import TermsAndConditions from './components/Terms/TermsAndConditions';
 
 
 
@@ -34,7 +35,7 @@ const App = () => {
         <Route path='/services' element={<Servicepage />} />
         <Route path='/about' element={<Aboutpage />} />
         <Route path='/privacy' element={<Privacypage />} />
-        <Route path='/terms' element={<Termspage />} />
+        <Route path='/terms' element={<TermsAndConditions />} />
 
 
 
