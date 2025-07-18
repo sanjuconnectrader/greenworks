@@ -117,7 +117,8 @@ const Contact = () => {
                 </div>
                 <div className="contactpage-text">
                   <div className="contactpage-label">Visit Us</div>
-                  <div className="contactpage-value">556 Green Avenue, Seattle, WA 98101</div>
+                  <div className="contactpage-value">16824 44th Ave W Unit-170
+Lynnwood, WA 98037</div>
                   <a 
                     href="https://maps.google.com" 
                     target="_blank" 

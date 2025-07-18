@@ -12,7 +12,7 @@ const SECTIONS = [
     id: "carpet",
     heading: "Carpet Cleaning",
     image: "./service01.jpg",
-    icon: <GiBroom className="service-icon-svg" />,
+ 
     benefits: [
       "Deep fiber cleaning",
       "Pet odor removal",
