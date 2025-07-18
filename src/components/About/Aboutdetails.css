@@ -69,7 +69,7 @@
 /* Services Grid */
 .aboutdetails-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
@@ -174,9 +174,9 @@
 }
 
 /* Responsive Adjustments */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .aboutdetails-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -189,6 +189,11 @@
     margin-bottom: 3rem;
   }
   
+  .aboutdetails-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
   .aboutdetails-card {
     padding: 2rem 1.5rem;
   }
@@ -197,10 +202,6 @@
 @media (max-width: 480px) {
   .aboutdetails-section {
     padding: 3rem 1rem;
-  }
-  
-  .aboutdetails-grid {
-    grid-template-columns: 1fr;
   }
   
   .aboutdetails-icon-container {

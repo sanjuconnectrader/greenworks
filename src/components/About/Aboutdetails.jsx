@@ -1,39 +1,31 @@
 import React from 'react';
 import './Aboutdetails.css';
-import { FaPaw, FaCouch, FaShower, FaCaravan, FaLeaf, FaShieldAlt, FaStar, FaHome } from 'react-icons/fa';
+import { FaPaw, FaCouch, FaShower, FaCaravan, FaStar } from 'react-icons/fa';
 
 const services = [
   {
     icon: <FaPaw className="aboutdetails-icon" />,
     title: 'Pet-Friendly Cleaning Solutions',
     description: 'Our specially formulated cleaning products are completely safe for all pets. We use non-toxic, biodegradable solutions that eliminate odors and stains without harmful chemicals.',
-    benefits: [
-   
-    ]
+    benefits: []
   },
   {
     icon: <FaCouch className="aboutdetails-icon" />,
     title: 'Premium Upholstery Care',
     description: 'Professional deep cleaning for all fabric furniture including sofas, chairs, and mattresses. Our advanced cleaning techniques restore your upholstery to like-new condition while protecting the fabric integrity.',
-    benefits: [
-   
-    ]
+    benefits: []
   },
   {
     icon: <FaShower className="aboutdetails-icon" />,
     title: 'Tile & Grout Restoration',
     description: 'Revitalize your tile surfaces with our intensive grout cleaning and sealing service. We remove years of built-up grime and apply protective sealants to keep your tiles looking cleaner longer.',
-    benefits: [
-  
-    ]
+    benefits: []
   },
   {
     icon: <FaCaravan className="aboutdetails-icon" />,
     title: 'RV & Camper Deep Cleaning',
     description: 'Specialized mobile cleaning service for RVs, campers, and travel trailers. We tackle the unique challenges of small spaces with our compact equipment and attention to detail.',
-    benefits: [
-
-    ]
+    benefits: []
   },
 ];
 

@@ -7,6 +7,8 @@ import Contactpage from './pages/Contactpage';
 import Pricingpage from './pages/Pricingpage';
 import Servicepage from './pages/Servicepage';
 import Aboutpage from './pages/Aboutpage';
+import PrivacyPolicy from './components/Privacy/PrivacyPolicy';
+import Privacypage from './pages/Privacypage';
 
 
 
@@ -31,7 +33,7 @@ const App = () => {
         <Route path='/pricing-details' element={<Pricingpage />} />
         <Route path='/services' element={<Servicepage />} />
         <Route path='/about' element={<Aboutpage />} />
-
+        <Route path='/privacy' element={<Privacypage />} />
 
 
 
