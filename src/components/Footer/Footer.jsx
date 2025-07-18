@@ -66,17 +66,17 @@ const Footer = () => {
                 </li>
                 <li className="footer__section-item">
                   <Link to="/about" className="footer__section-link">
-                   About
+                    About
                   </Link>
                 </li>
                 <li className="footer__section-item">
                   <Link to="/services" className="footer__section-link">
-                   Service
+                    Service
                   </Link>
                 </li>
                 <li className="footer__section-item">
-                  <Link to="/pricing" className="footer__section-link">
-                    pricing
+                  <Link to="/pricing-details" className="footer__section-link">
+                    Pricing
                   </Link>
                 </li>
               </ul>
@@ -108,15 +108,15 @@ const Footer = () => {
             <div className="footer__section">
               <h4 className="footer__section-title">Contact Us</h4>
               <ul className="footer__section-list">
-                <li className="footer__section-item footer__contact-item">
+                <li className="footer__contact-item">
                   <FaMapMarkerAlt className="footer__contact-icon" />
                   <span className="footer__contact-text">16824 44th Ave W Unit-170<br />Lynnwood, WA 98037</span>
                 </li>
-                <li className="footer__section-item footer__contact-item">
+                <li className="footer__contact-item">
                   <FaPhoneAlt className="footer__contact-icon" />
                   <span className="footer__contact-text">(206) 899-6862</span>
                 </li>
-                <li className="footer__section-item footer__contact-item">
+                <li className="footer__contact-item">
                   <FaEnvelope className="footer__contact-icon" />
                   <span className="footer__contact-text footer__email">info@greenworkscarpetcleaning.com</span>
                 </li>
