@@ -15,9 +15,14 @@ const Footer = () => {
             </h2>
             <p className="footer__cta-subtitle">Get your free consultation and quote today</p>
           </div>
-          <Link to="/contact" className="footer__cta-button">
-            REQUEST A QUOTE <FaAngleDoubleRight className="footer__cta-icon" />
-          </Link>
+          <a
+            href="https://book.housecallpro.com/book/GreenWorks-Carpet-Cleaning/d68f1199665f4437a75d2123c4ec5398?v2=true&merchant_id=3e43968f-48c3-4024-983a-da9b85be73d9&hl=en-US&gei=KjSDZ7aXGfT10PEP0IWhyQo&rwg_token=AJKvS9XVlwjzoWFVeFHQOYYtHIP68qAmBQs8BNq_MAIBoLyPsx6WyqieyIp5exbM6PsJRDmt1khkQrxTUu7G0LZAb-1SbUSicQ%3D%3D"
+            className="footer__cta-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book Now <FaAngleDoubleRight className="footer__cta-icon" />
+          </a>
         </div>
       </div>
 
