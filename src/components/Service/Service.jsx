@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaPlus, FaMinus, FaClock, FaShieldAlt, FaLeaf, FaStar } from "react-icons/fa";
+import { FaPlus, FaMinus, FaClock, FaShieldAlt, FaLeaf, FaStar, FaChevronDown } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiCheck, FiAward, FiShield, FiHeart, FiClock } from "react-icons/fi";
 import { GiBroom, GiWoodenChair, GiStonePath, GiSofa } from "react-icons/gi";
@@ -255,7 +255,6 @@ const FEATURES = [
   }
 ];
 
-
 const TESTIMONIALS = [
   {
     name: "Joseph Alex",
@@ -282,36 +281,60 @@ const AccordionItem = ({ title, body, details, icon, defaultOpen = false }) => {
   
   return (
     <div className={`acc-item ${open ? "is-open" : ""}`}>
-      <button
+      <motion.button
         className="acc-btn"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
+        whileHover={{ backgroundColor: "rgba(37, 99, 235, 0.05)" }}
+        whileTap={{ scale: 0.98 }}
       >
         <span className="acc-icon-wrapper">
           <span className="acc-feature-icon">{icon}</span>
           <span className="acc-btn-text">{title}</span>
         </span>
-        <span className="acc-icon">
-          {open ? <FaMinus size={14} /> : <FaPlus size={14} />}
-        </span>
-      </button>
+        <motion.span 
+          className="acc-icon"
+          animate={{ rotate: open ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <FaChevronDown size={14} />
+        </motion.span>
+      </motion.button>
       
       <AnimatePresence>
         {open && (
           <motion.div
             className="acc-body"
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            animate={{ 
+              opacity: 1, 
+              height: "auto",
+              transition: {
+                height: { duration: 0.3 },
+                opacity: { duration: 0.2, delay: 0.1 }
+              }
+            }}
+            exit={{ 
+              opacity: 0, 
+              height: 0,
+              transition: {
+                height: { duration: 0.3 },
+                opacity: { duration: 0.2 }
+              }
+            }}
           >
             <div className="acc-body-content">
               <p className="acc-body-main">{body}</p>
               {details && (
-                <div className="acc-details">
+                <motion.div 
+                  className="acc-details"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
                   <div className="detail-decoration"></div>
                   <p className="acc-body-details">{details}</p>
-                </div>
+                </motion.div>
               )}
             </div>
           </motion.div>
@@ -323,12 +346,17 @@ const AccordionItem = ({ title, body, details, icon, defaultOpen = false }) => {
 
 const ServiceBlock = ({ heading, image, steps, disclaimer, reverse, icon, benefits }) => {
   return (
-    <div className={`service-block ${reverse ? "reverse" : ""}`}>
+    <motion.div 
+      className={`service-block ${reverse ? "reverse" : ""}`}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
+    >
       <div className="service-img-container">
         <figure className="service-img">
           <img src={image} alt={heading} loading="lazy" />
           <div className="image-overlay"></div>
-          <div className="image-highlight"></div>
           <div className="service-icon-badge">
             {icon}
           </div>
@@ -343,10 +371,17 @@ const ServiceBlock = ({ heading, image, steps, disclaimer, reverse, icon, benefi
         
         <div className="service-benefits">
           {benefits.map((benefit, index) => (
-            <div key={index} className="benefit-item">
+            <motion.div 
+              key={index} 
+              className="benefit-item"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+            >
               <span className="benefit-icon">✓</span>
               <span>{benefit}</span>
-            </div>
+            </motion.div>
           ))}
         </div>
         
@@ -361,25 +396,35 @@ const ServiceBlock = ({ heading, image, steps, disclaimer, reverse, icon, benefi
         </ul>
         
         {disclaimer && (
-          <div className="service-note">
+          <motion.div 
+            className="service-note"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+          >
             <div className="note-icon">ℹ️</div>
             <p>{disclaimer}</p>
-          </div>
+          </motion.div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 const FeatureCard = ({ icon, title, description }) => {
   return (
-    <div className="feature-card">
+    <motion.div 
+      className="feature-card"
+      whileHover={{ y: -5, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)" }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="feature-icon-container">
         {icon}
       </div>
       <h3 className="feature-title">{title}</h3>
       <p className="feature-description">{description}</p>
-    </div>
+    </motion.div>
   );
 };
 
@@ -392,14 +437,18 @@ const TestimonialCard = ({ name, role, content, rating }) => {
   ));
   
   return (
-    <div className="testimonial-card">
+    <motion.div 
+      className="testimonial-card"
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="testimonial-rating">{stars}</div>
       <p className="testimonial-content">"{content}"</p>
       <div className="testimonial-author">
         <h4 className="testimonial-name">{name}</h4>
         <p className="testimonial-role">{role}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -408,14 +457,26 @@ const ServiceSection = () => {
     <section className="service" id="services">
       <div className="service-container">
         <div className="section-header">
-          <h2 className="section-title">
+          <motion.h2 
+            className="section-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             Premium Cleaning Solutions
             <span className="title-decoration"></span>
-          </h2>
+          </motion.h2>
 
-          <p className="section-description">
+          <motion.p 
+            className="section-description"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             Professional cleaning services tailored to your specific needs with our certified eco-friendly process
-          </p>
+          </motion.p>
         </div>
 
         <div className="features-grid">
@@ -438,9 +499,15 @@ const ServiceSection = () => {
         </div>
 
         <div className="testimonials-section">
-          <h3 className="testimonials-heading">
+          <motion.h3 
+            className="testimonials-heading"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             What Our Clients Say
-          </h3>
+          </motion.h3>
           
           <div className="testimonials-grid">
             {TESTIMONIALS.map((testimonial, index) => (
