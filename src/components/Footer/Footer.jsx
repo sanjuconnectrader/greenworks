@@ -26,7 +26,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Main Footer Content - Single Row Layout */}
+      {/* Main Footer Content */}
       <div className="footer__main">
         <div className="footer__main-container">
           {/* Company Info */}
@@ -53,57 +53,30 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* All Navigation in Single Row */}
-          <div className="footer__row-sections">
-            {/* Services */}
+          {/* Navigation Sections */}
+          <div className="footer__sections-grid">
+            {/* Quick Links */}
             <div className="footer__section">
-              <h4 className="footer__section-title">Services</h4>
+              <h4 className="footer__section-title">Quick Links</h4>
               <ul className="footer__section-list">
                 <li className="footer__section-item">
-                  <Link to="/residential" className="footer__section-link">
-                    Residential Cleaning
+                  <Link to="/" className="footer__section-link">
+                    Home
                   </Link>
                 </li>
-                <li className="footer__section-item">
-                  <Link to="/commercial" className="footer__section-link">
-                    Commercial Cleaning
-                  </Link>
-                </li>
-                <li className="footer__section-item">
-                  <Link to="/stain-removal" className="footer__section-link">
-                    Stain Removal
-                  </Link>
-                </li>
-                <li className="footer__section-item">
-                  <Link to="/deep-cleaning" className="footer__section-link">
-                    Deep Cleaning
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Company */}
-            <div className="footer__section">
-              <h4 className="footer__section-title">Company</h4>
-              <ul className="footer__section-list">
                 <li className="footer__section-item">
                   <Link to="/about" className="footer__section-link">
-                    About Us
+                   About
                   </Link>
                 </li>
                 <li className="footer__section-item">
-                  <Link to="/team" className="footer__section-link">
-                    Our Team
+                  <Link to="/services" className="footer__section-link">
+                   Service
                   </Link>
                 </li>
                 <li className="footer__section-item">
-                  <Link to="/testimonials" className="footer__section-link">
-                    Testimonials
-                  </Link>
-                </li>
-                <li className="footer__section-item">
-                  <Link to="/careers" className="footer__section-link">
-                    Careers
+                  <Link to="/pricing" className="footer__section-link">
+                    pricing
                   </Link>
                 </li>
               </ul>
@@ -113,11 +86,7 @@ const Footer = () => {
             <div className="footer__section">
               <h4 className="footer__section-title">Support</h4>
               <ul className="footer__section-list">
-                <li className="footer__section-item">
-                  <Link to="/faq" className="footer__section-link">
-                    FAQ
-                  </Link>
-                </li>
+               
                 <li className="footer__section-item">
                   <Link to="/contact" className="footer__section-link">
                     Contact
