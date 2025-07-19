@@ -7,12 +7,19 @@ import { IoWater, IoTime, IoDiamond, IoRibbon } from "react-icons/io5";
 import { RiCustomerService2Fill, RiShieldCheckFill, RiTeamFill } from "react-icons/ri";
 import "./Service.css";
 
+// SECTIONS.js
+// (Ensure the referenced icon components are imported in the file that uses this data.)
+
 const SECTIONS = [
+  /* ───────────────────────── CARPET CLEANING ───────────────────────── */
   {
     id: "carpet",
+    title: "Five‑Star Seattle Carpet Cleaning",
     heading: "Carpet Cleaning",
     image: "./service01.jpg",
- 
+    description:
+      "Our five‑star Seattle carpet‑cleaning process ensures every fibre is cleaned thoroughly with no detail missed. "
+      + "Family‑ and pet‑safe solutions leave your carpet soft so it stays cleaner for longer, while hot‑water extraction removes deep‑seated soil and allergens.",
     benefits: [
       "Deep fiber cleaning",
       "Pet odor removal",
@@ -20,49 +27,61 @@ const SECTIONS = [
       "Stain protection"
     ],
     steps: [
-      { 
-        title: "Vacuuming", 
+      {
+        title: "Vacuuming",
         body: "Thorough vacuuming removes loose soil and pet hair from carpet fibres.",
-        details: "We use commercial-grade HEPA filtration vacuums that capture particles as small as 0.3 microns, including dust mites, pollen, and pet dander.",
+        details:
+          "We use commercial‑grade HEPA‑filtration vacuums that capture particles as small as 0.3 microns, including dust mites, pollen, and pet dander.",
         icon: <IoWater />
       },
-      { 
-        title: "Pre-Spraying", 
-        body: "Eco-friendly solution sprayed to loosen embedded dirt.",
-        details: "Our pH-balanced, biodegradable pre-spray solution penetrates deep into carpet fibers without damaging them or leaving harmful residues.",
+      {
+        title: "Pre‑Spraying",
+        body: "Eco‑friendly solution sprayed to loosen embedded dirt.",
+        details:
+          "We pre-treat your carpets with an organic and eco-friendly solution that cuts through the deeply embedded soils in the carpet fibers.",
         icon: <FaLeaf />
       },
-      { 
-        title: "Agitation", 
-        body: "Grooming brushes work the pre-spray deep into fibres for better soil suspension.",
-        details: "Rotary brushes with soft nylon bristles gently agitate fibers to lift dirt without causing premature wear to your carpet.",
+      {
+        title: "Agitation",
+        body: "Grooming brushes work the pre‑spray deep into fibres for better soil suspension.",
+        details:
+          "We use mechanical agitation to help our pre-spray break up the soil so that is more easily extracted.",
         icon: <FaClock />
       },
-      { 
-        title: "Rinsing & Extraction", 
-        body: "High-powered hot-water extraction lifts soil and residues out.",
-        details: "Our truck-mounted extraction system delivers water at 220°F and 500 PSI, then removes 95% of moisture to prevent mold/mildew.",
+      {
+        title: "Rinsing & Extraction",
+        body: "High‑powered hot‑water extraction lifts soil and residues out.",
+        details:
+          "With our high-powered carpet cleaning machines, we thoroughly rinse the carpet to remove the suspended soils out of the carpet fibers. Our cutting-edge machinery is able to perform 8 to 10 times as many passes than just a traditional wand, which helps the carpet dry faster but also to ensure maximum soil extraction.",
         icon: <IoDiamond />
       },
-      { 
-        title: "General Deodorizing", 
-        body: "Neutralises odours with hypoallergenic, pet-safe deodorisers.",
-        details: "Enzyme-based deodorizers break down odor molecules rather than masking them, eliminating smells at their source.",
+      {
+        title: "General Deodorizing",
+        body: "Neutralises odours with hypoallergenic, pet‑safe deodorisers.",
+        details:
+          "This is optional and extra for you to choose from. Our general deodorizer helps with general pet odor and general odor that dirt and soil can bring into the home. It leaves behind a light pleasant smell that will last for a few days following the cleaning.",
         icon: <FaLeaf />
       },
-      { 
-        title: "Carpet Protector", 
-        body: "Optional fibre protector helps repel future spills and stains.",
-        details: "Fluorochemical protector creates an invisible barrier that causes liquids to bead up rather than absorb, making future cleanups easier.",
+      {
+        title: "Carpet Protector (Optional)",
+        body: "Fibre protector helps repel future spills and stains.",
+        details:
+          "Having carpet protector reapplied after cleaning is great way to help your carpet to last longer and make spotting small spills easier for you to clean up. Carpet protector helps soil not to bind to the carpet fibers so that regular vacuuming can more easily remove it, and helps liquid spills to not damage the dye sites in the carpet creating a permanent stain.",
         icon: <FaShieldAlt />
       }
     ]
   },
+
+  /* ───────────────────────── HARDWOOD FLOOR CLEANING ───────────────────────── */
   {
     id: "wood",
+    title: "Professional Hardwood Floor Cleaning",
     heading: "Hardwood Floor Cleaning",
     image: "./service02.jpg",
     icon: <GiWoodenChair className="service-icon-svg" />,
+    description:
+      "Hardwood floors add natural beauty, but traffic and residue can dull the finish. "
+      + "Our gentle, low‑moisture process lifts embedded grime, buffs away haze, and can be sealed with an optional water‑based urethane top‑coat for renewed shine and scratch resistance.",
     benefits: [
       "Gentle on finishes",
       "Scratch prevention",
@@ -70,43 +89,54 @@ const SECTIONS = [
       "Low-moisture process"
     ],
     steps: [
-      { 
-        title: "Inspection", 
+      {
+        title: "Inspection",
         body: "Assess finish type, condition, and areas of concern.",
-        details: "We examine your floors under specialized lighting to identify wear patterns, finish type (polyurethane, wax, oil), and problem areas needing special attention.",
+        details:
+          "We examine your floors under specialised lighting to identify wear patterns, finish type (polyurethane, wax, oil), and problem areas needing special attention.",
         icon: <FaShieldAlt />
       },
-      { 
-        title: "Vacuuming", 
-        body: "Edge-to-edge vacuum collects grit that can scratch wood.",
-        details: "Soft-bristle floor attachments prevent scratching while powerful suction removes embedded dirt from between floorboards.",
+      {
+        title: "Vacuuming",
+        body: "Edge‑to‑edge vacuum collects grit that can scratch wood.",
+        details:
+          "Soft‑bristle floor attachments prevent scratching while powerful suction removes embedded dirt from between floorboards.",
         icon: <FaClock />
       },
-      { 
-        title: "Deep Cleaning", 
-        body: "Specialised wood-safe cleaner removes built-up grime.",
-        details: "Our pH-neutral wood cleaner lifts dirt without damaging finishes or causing the whitening effect common with harsh cleaners.",
+      {
+        title: "Deep Cleaning",
+        body: "Specialised wood‑safe cleaner removes built‑up grime.",
+        details:
+          "Our pH‑neutral wood cleaner lifts dirt without damaging finishes or causing the whitening effect common with harsh cleaners.",
         icon: <FaLeaf />
       },
-      { 
-        title: "Extraction & Buff", 
-        body: "Low-moisture buffing lifts residue and polishes surface.",
-        details: "Microfiber pads gently buff the surface while our specialized equipment removes all cleaning residue, leaving no streaks or film.",
+      {
+        title: "Extraction & Buff",
+        body: "Low‑moisture buffing lifts residue and polishes surface.",
+        details:
+          "Microfiber pads gently buff the surface while specialised equipment removes all cleaning residue, leaving no streaks or film.",
         icon: <IoRibbon />
       },
-      { 
-        title: "Protective Finish", 
-        body: "Optional urethane top-coat adds shine and defence.",
-        details: "Water-based protective coating enhances shine while providing scratch resistance and making future cleaning easier.",
+      {
+        title: "Protective Finish (Optional)",
+        body: "Urethane top‑coat adds shine and defence.",
+        details:
+          "Water‑based protective coating enhances shine while providing scratch resistance and making future cleaning easier.",
         icon: <FaShieldAlt />
       }
-    ],
+    ]
   },
+
+  /* ───────────────────────── TILE & GROUT CLEANING ───────────────────────── */
   {
     id: "tile",
+    title: "Tile & Grout Revival Service",
     heading: "Tile & Grout Cleaning",
     image: "./service03.jpg",
     icon: <GiStonePath className="service-icon-svg" />,
+    description:
+      "Cutting‑edge cleaning solutions and high‑pressure hot‑water extraction restore your tile’s original colour and clarity. "
+      + "We finish with an optional penetrating grout sealant to guard against future stains, mold, and moisture.",
     benefits: [
       "Restores original color",
       "Grout revitalization",
@@ -114,103 +144,130 @@ const SECTIONS = [
       "Sealant application"
     ],
     steps: [
-      { 
-        title: "Sweeping", 
+      {
+        title: "Sweeping",
         body: "Initial sweeping removes loose debris and surface dirt.",
-        details: "We use soft-bristle brooms to prevent scratching delicate tile surfaces while removing all loose particles.",
+        details:
+          "Soft‑bristle brooms prevent scratching delicate tile surfaces while clearing away loose particles.",
         icon: <FaShieldAlt />
       },
-      { 
-        title: "Vacuuming", 
+      {
+        title: "Vacuuming",
         body: "Detailed vacuuming ensures complete debris removal.",
-        details: "Commercial vacuums with specialized floor attachments extract dirt from grout lines and tile textures.",
+        details:
+          "Commercial vacuums with specialised floor attachments extract dirt from grout lines and tile textures.",
         icon: <FaClock />
       },
-      { 
-        title: "Pre-Spray", 
-        body: "Application of specialized tile cleaning solution.",
-        details: "pH-balanced cleaner breaks down soap scum, hard water deposits, and embedded dirt without damaging grout.",
+      {
+        title: "Pre‑Spray",
+        body: "Application of specialised tile‑cleaning solution.",
+        details:
+          "pH‑balanced cleaner breaks down soap scum, hard‑water deposits, and embedded dirt without damaging grout.",
         icon: <FaLeaf />
       },
-      { 
-        title: "Agitation", 
+      {
+        title: "Agitation",
         body: "Deep scrubbing of grout lines and tile surfaces.",
-        details: "Rotary brushes with varying stiffness clean different tile types effectively while protecting surfaces.",
+        details:
+          "Rotary brushes with varying stiffness clean different tile types effectively while protecting surfaces.",
         icon: <IoDiamond />
       },
-      { 
-        title: "Hot Water Rinse", 
-        body: "High-pressure hot water extraction.",
-        details: "Water heated to 200°F with 1000 PSI pressure removes all cleaning residues and suspended dirt.",
+      {
+        title: "Hot‑Water Rinse",
+        body: "High‑pressure hot‑water extraction.",
+        details:
+          "Our powerful cleaning machine generates temperatures up to 230 degrees. Our self-contained tile and grout cleaning tool pressurizes this hot water and blasts away dirt and grime. It is immediately extracted and does not leave a big mess of water puddles.",
         icon: <FaShieldAlt />
       },
-      { 
-        title: "Restorative Cleaning", 
+      {
+        title: "Restorative Cleaning",
         body: "Targeted treatment for stubborn stains.",
-        details: "Special poultices and steam treatments address specific problem areas like mold or mineral deposits.",
+        details:
+          "At times, we will need to use a two-part cleaning process to properly restore the look of your grout. The first process removes oil, dirt, and grime. The second restores the look of the grout lines using a specialty grout restoration cleaning solution to do so. ",
         icon: <FaLeaf />
       },
-      { 
-        title: "Grout Sealing", 
-        body: "Optional protective sealing application.",
-        details: "Penetrating sealant protects grout from future staining and makes regular maintenance easier.",
+      {
+        title: "Grout Sealing (Optional)",
+        body: "Protective sealing application.",
+        details:
+          "We offer grout sealing using an impregnating sealer to penetrate deep into the grout lines giving you layers of protection. This sealer will not damage the grout but will help liquids and oils to not penetrate and stain the grout lines. For natural tiles such as Slate, Limestone, and tumbled travertine – we can seal the tile face and the grout lines for added protection with this penetrating sealer. This is a safe and better alterative to topical coats for these types of tile.",
         icon: <FaShieldAlt />
       }
-    ],
-    
+    ]
   },
+
+  /* ───────────────────────── UPHOLSTERY CLEANING ───────────────────────── */
   {
     id: "upholstery",
+    title: "Delicate Upholstery Cleaning & Protection",
     heading: "Upholstery Cleaning",
     image: "./service04.jpg",
     icon: <GiSofa className="service-icon-svg" />,
+    description:
+      "Delicate upholstery fabrics trap dust, allergens, and spills that ordinary vacuuming can’t remove. "
+      + "We deep‑clean microfiber, silk blends, velvet, and high‑quality synthetics, treat stains individually, and offer optional fabric protector to keep pieces looking showroom‑fresh.",
     benefits: [
-      "Fabric-safe process",
+      "Fabric‑safe process",
       "Stain removal",
       "Allergen reduction",
-      "Leather conditioning"
+      "Delicate fabric care"
     ],
     steps: [
-      { 
-        title: "Types of Upholstery We Clean", 
-        body: "We professionally clean all fabric types including:",
-        details: "• Leather (all types)\n• Microfiber\n• Cotton/Linen\n• Silk blends\n• Velvet\n• Synthetic fabrics\n• Antique textiles (with special care)\n\nWe test all cleaning methods on inconspicuous areas first.",
+      {
+        title: "Types of Upholstery We Clean",
+        body: "We professionally clean delicate fabric types including:",
+        details:
+          "• Microfiber\n"
+          + "• Silk blends\n"
+          + "• Velvet\n"
+          + "• Synthetic fabrics\n\n"
+          + "We test all cleaning methods on inconspicuous areas first.",
         icon: <FaShieldAlt />
       },
-      { 
-        title: "Inspection & Testing", 
+      {
+        title: "Inspection & Testing",
         body: "Assessing fabric type and condition.",
-        details: "We identify fiber content, construction, and existing damage before selecting appropriate cleaning methods.",
+        details:
+          "We identify fiber content, construction, and existing damage before selecting appropriate cleaning methods.",
         icon: <FaClock />
       },
-      { 
-        title: "Vacuuming", 
+      {
+        title: "Vacuuming",
         body: "Deep particulate removal.",
-        details: "Special upholstery tools remove embedded dirt without damaging fabric fibers or decorative elements.",
+        details:
+          "Special upholstery tools remove embedded dirt without damaging fabric fibers or decorative elements.",
         icon: <FaLeaf />
       },
-      { 
-        title: "Spot Treatment", 
+      {
+        title: "Spot Treatment",
         body: "Targeted stain removal.",
-        details: "Custom solutions for different stain types (protein, tannin, oil, ink, etc.) applied with appropriate dwell times.",
+        details:
+          "Custom solutions for different stain types (protein, tannin, oil, ink, etc.) applied with appropriate dwell times.",
         icon: <IoDiamond />
       },
-      { 
-        title: "Cleaning", 
-        body: "Whole-surface treatment.",
-        details: "Low-moisture methods or steam cleaning based on fabric requirements, using eco-friendly solutions.",
+      {
+        title: "Cleaning",
+        body: "Whole‑surface treatment.",
+        details:
+          "Low‑moisture methods or steam cleaning based on fabric requirements, using eco‑friendly solutions.",
         icon: <FaShieldAlt />
       },
-      { 
-        title: "Protection", 
-        body: "Optional fabric protector.",
-        details: "Creates invisible barrier against future spills and stains while maintaining fabric breathability.",
+      {
+        title: "Protection (Optional)",
+        body: "Fabric protector application.",
+        details:
+          "Creates an invisible barrier against future spills and stains while maintaining fabric breathability.",
         icon: <FaLeaf />
       }
     ],
-    disclaimer: "Note: Some delicate fabrics may require special handling. We always test cleaning methods in inconspicuous areas first."
+    disclaimer:
+      "Note: Some delicate fabrics may require special handling. We always test cleaning methods in inconspicuous areas first."
   }
 ];
+
+
+
+
 
 const FEATURES = [
   {
