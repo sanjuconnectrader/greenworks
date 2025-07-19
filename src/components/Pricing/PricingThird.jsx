@@ -37,10 +37,10 @@ const hardSurface = [
 ];
 
 function Card({ img, title, price, bullets, icon, popular, note }) {
+  const bookingUrl = "https://book.housecallpro.com/book/GreenWorks-Carpet-Cleaning/d68f1199665f4437a75d2123c4ec5398?v2=true&merchant_id=3e43968f-48c3-4024-983a-da9b85be73d9&hl=en-US&gei=KjSDZ7aXGfT10PEP0IWhyQo&rwg_token=AJKvS9XVlwjzoWFVeFHQOYYtHIP68qAmBQs8BNq_MAIBoLyPsx6WyqieyIp5exbM6PsJRDmt1khkQrxTUu7G0LZAb-1SbUSicQ%3D%3D";
+
   return (
     <article className={`PricingThird-card ${popular ? "PricingThird-popular" : ""}`}>
-   
-      
       <div className="PricingThird-cardImageContainer">
         <img src={img} alt={title} className="PricingThird-cardImage" loading="lazy" />
         <div className="PricingThird-imageOverlay"></div>
@@ -67,10 +67,15 @@ function Card({ img, title, price, bullets, icon, popular, note }) {
           </ul>
         </div>
         
-        <button className="PricingThird-cardButton">
+        <a 
+          href={bookingUrl} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="PricingThird-cardButton"
+        >
           <span>Book Service</span>
           <div className="PricingThird-buttonArrow"></div>
-        </button>
+        </a>
       </div>
     </article>
   );

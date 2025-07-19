@@ -47,8 +47,8 @@ const areaRug = [
     icon: <FaRunning className="Pricing-page-second-service-icon" />,
     note: "Minimum $75 charge"
   },
-    {
-    id: "rug",
+  {
+    id: "rug2",
     img: `${process.env.PUBLIC_URL}/rug2.jpg`,
     title: "AREA RUGS DELICATE",
     price: "$2/sqft",
@@ -64,10 +64,10 @@ const areaRug = [
 ];
 
 function Card({ img, title, price, bullets, icon, popular, note }) {
+  const bookingUrl = "https://book.housecallpro.com/book/GreenWorks-Carpet-Cleaning/d68f1199665f4437a75d2123c4ec5398?v2=true&merchant_id=3e43968f-48c3-4024-983a-da9b85be73d9&hl=en-US&gei=KjSDZ7aXGfT10PEP0IWhyQo&rwg_token=AJKvS9XVlwjzoWFVeFHQOYYtHIP68qAmBQs8BNq_MAIBoLyPsx6WyqieyIp5exbM6PsJRDmt1khkQrxTUu7G0LZAb-1SbUSicQ%3D%3D";
+
   return (
     <div className={`Pricing-page-second-service-card ${popular ? "Pricing-page-second-popular" : ""}`}>
-    
-      
       <div className="Pricing-page-second-card-image-container">
         <img src={img} alt={title} className="Pricing-page-second-card-image" loading="lazy" />
         <div className="Pricing-page-second-card-overlay"></div>
@@ -96,10 +96,15 @@ function Card({ img, title, price, bullets, icon, popular, note }) {
           </ul>
         </div>
         
-        <button className="Pricing-page-second-card-button">
+        <a 
+          href={bookingUrl} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="Pricing-page-second-card-button"
+        >
           <span>Book Now</span>
           <FaArrowRight className="Pricing-page-second-button-icon" />
-        </button>
+        </a>
       </div>
     </div>
   );

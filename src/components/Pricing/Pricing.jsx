@@ -32,72 +32,79 @@ const data = [
 ];
 
 export default function Pricing() {
+  const bookingUrl = "https://book.housecallpro.com/book/GreenWorks-Carpet-Cleaning/d68f1199665f4437a75d2123c4ec5398?v2=true&merchant_id=3e43968f-48c3-4024-983a-da9b85be73d9&hl=en-US&gei=KjSDZ7aXGfT10PEP0IWhyQo&rwg_token=AJKvS9XVlwjzoWFVeFHQOYYtHIP68qAmBQs8BNq_MAIBoLyPsx6WyqieyIp5exbM6PsJRDmt1khkQrxTUu7G0LZAb-1SbUSicQ%3D%3D";
+
   return (
-    <section className="pricing-section">
-      <div className="pricing-container">
-        <div className="pricing-header">
-          <h2 className="pricing-title">CARPET RESTORATION CLEANING</h2>
-          <div className="pricing-subtitle-container">
-            <p className="pricing-subtitle">
+    <section className="Pricingone-section">
+      <div className="Pricingone-container">
+        <div className="Pricingone-header">
+          <h2 className="Pricingone-title">CARPET RESTORATION CLEANING</h2>
+          <div className="Pricingone-subtitle-container">
+            <p className="Pricingone-subtitle">
               Professional cleaning services tailored to your needs
             </p>
-            <div className="pricing-underline"></div>
+            <div className="Pricingone-underline"></div>
           </div>
         </div>
 
-        <div className="pricing-grid">
+        <div className="Pricingone-grid">
           {data.map(({ id, img, title, price, bullets, popular, note }) => (
             <div 
-              className={`pricing-card ${popular ? "popular" : ""}`} 
+              className={`Pricingone-card ${popular ? "popular" : ""}`} 
               key={id}
             >
               {popular && (
                 <div className="popular-badge">Most Popular</div>
               )}
               
-              <div className="card-image-container">
+              <div className="Pricingone-card-image-container">
                 <img 
                   src={img} 
                   alt={title} 
-                  className="card-image" 
+                  className="Pricingone-card-image" 
                   loading="lazy" 
                 />
               </div>
 
-              <div className="card-content">
-                <div className="card-header">
-                  <h3 className="card-title">{title}</h3>
-                  <div className="price-container">
-                    <span className="card-price">{price}</span>
-                    {note && <span className="price-note">{note}</span>}
+              <div className="Pricingone-card-content">
+                <div className="Pricingone-card-header">
+                  <h3 className="Pricingone-card-title">{title}</h3>
+                  <div className="Pricingone-price-container">
+                    <span className="Pricingone-card-price">{price}</span>
+                    {note && <span className="Pricingone-price-note">{note}</span>}
                   </div>
                 </div>
 
-                <div className="card-features">
-                  <h4 className="features-title">
-                    <FaInfoCircle className="icon" />
+                <div className="Pricingone-card-features">
+                  <h4 className="Pricingone-features-title">
+                    <FaInfoCircle className="Pricingone-icon" />
                     Measurements & Details
                   </h4>
-                  <ul className="features-list">
+                  <ul className="Pricingone-features-list">
                     {bullets.map((bullet, index) => (
-                      <li key={index} className="feature-item">
-                        <FaCheckCircle className="icon check" />
+                      <li key={index} className="Pricingone-feature-item">
+                        <FaCheckCircle className="Pricingone-icon Pricingone-check" />
                         {bullet}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <button className="card-button">
+                <a 
+                  href={bookingUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="Pricingone-card-button"
+                >
                   Book This Service
-                </button>
+                </a>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="pricing-footer">
-          <p className="disclaimer">
+        <div className="Pricingone-footer">
+          <p className="Pricingone-disclaimer">
             * All prices are estimates. Final pricing may vary based on specific requirements.
           </p>
         </div>
