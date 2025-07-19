@@ -6,10 +6,10 @@ const TermsAndConditions = () => {
     <div className="terms-container">
       <div className="terms-content">
         <header className="terms-header">
-          <div className="header-overlay"></div>
+          <div className="terms-header-overlay"></div>
           <h1>Terms and Conditions</h1>
-          <p className="last-updated">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-          <div className="company-contact">
+          <p className="terms-last-updated">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          <div className="terms-company-contact">
             <p>Greenworks Carpet Service Cleaning</p>
             <p>16824 44th Ave W Unit-170, Lynnwood, WA 98037</p>
             <p><a href="tel:2068996862">(206) 899-6862</a> | <a href="mailto:info@greenworkscarpetcleaning.com">info@greenworkscarpetcleaning.com</a></p>
@@ -18,11 +18,11 @@ const TermsAndConditions = () => {
 
         <div className="terms-main-content">
           <section className="terms-section">
-            <div className="section-header">
-              <div className="section-number">1</div>
+            <div className="terms-section-header">
+              <div className="terms-section-number">1</div>
               <h2>Service Agreement</h2>
             </div>
-            <div className="section-content">
+            <div className="terms-section-content">
               <p>
                 By booking our services, you agree to the following terms:
               </p>
@@ -36,11 +36,11 @@ const TermsAndConditions = () => {
           </section>
 
           <section className="terms-section">
-            <div className="section-header">
-              <div className="section-number">2</div>
+            <div className="terms-section-header">
+              <div className="terms-section-number">2</div>
               <h2>Pricing and Payments</h2>
             </div>
-            <div className="section-content">
+            <div className="terms-section-content">
               <p>
                 Our pricing structure is as follows:
               </p>
@@ -55,11 +55,11 @@ const TermsAndConditions = () => {
           </section>
 
           <section className="terms-section">
-            <div className="section-header">
-              <div className="section-number">3</div>
+            <div className="terms-section-header">
+              <div className="terms-section-number">3</div>
               <h2>Service Guarantee</h2>
             </div>
-            <div className="section-content">
+            <div className="terms-section-content">
               <p>
                 We stand behind our work with the following guarantees:
               </p>
@@ -73,11 +73,11 @@ const TermsAndConditions = () => {
           </section>
 
           <section className="terms-section">
-            <div className="section-header">
-              <div className="section-number">4</div>
+            <div className="terms-section-header">
+              <div className="terms-section-number">4</div>
               <h2>Customer Responsibilities</h2>
             </div>
-            <div className="section-content">
+            <div className="terms-section-content">
               <p>
                 To ensure the best results, customers agree to:
               </p>
@@ -92,11 +92,11 @@ const TermsAndConditions = () => {
           </section>
 
           <section className="terms-section">
-            <div className="section-header">
-              <div className="section-number">5</div>
+            <div className="terms-section-header">
+              <div className="terms-section-number">5</div>
               <h2>Liability</h2>
             </div>
-            <div className="section-content">
+            <div className="terms-section-content">
               <p>
                 Greenworks Carpet Service Cleaning maintains proper insurance and takes all reasonable precautions, however:
               </p>
@@ -113,11 +113,11 @@ const TermsAndConditions = () => {
           </section>
 
           <section className="terms-section">
-            <div className="section-header">
-              <div className="section-number">6</div>
+            <div className="terms-section-header">
+              <div className="terms-section-number">6</div>
               <h2>General Terms</h2>
             </div>
-            <div className="section-content">
+            <div className="terms-section-content">
               <ul>
                 <li>These terms constitute the entire agreement between you and Greenworks Carpet Service Cleaning</li>
                 <li>We reserve the right to modify these terms at any time</li>

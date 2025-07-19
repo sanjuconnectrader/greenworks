@@ -1,5 +1,5 @@
 /* Base Styles */
-.privacy-policy-container {
+.privacy-container {
   background-color: #f9f9f9;
   min-height: 100vh;
   display: flex;
@@ -11,7 +11,7 @@
   margin-top: 110px;
 }
 
-.privacy-policy-content {
+.privacy-content {
   max-width: 1000px;
   width: 100%;
   background-color: #ffffff;
@@ -29,7 +29,7 @@
   color: white;
 }
 
-.header-overlay {
+.privacy-header-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -48,7 +48,7 @@
   text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.last-updated {
+.privacy-last-updated {
   color: rgba(255, 255, 255, 0.9);
   font-size: 1rem;
   font-weight: 400;
@@ -56,7 +56,7 @@
   position: relative;
 }
 
-.company-contact {
+.privacy-company-contact {
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(5px);
   padding: 1.5rem;
@@ -66,13 +66,13 @@
   position: relative;
 }
 
-.company-contact p {
+.privacy-company-contact p {
   margin: 0.5rem 0;
   color: white;
   font-size: 1.05rem;
 }
 
-.company-contact a {
+.privacy-company-contact a {
   color: white;
   text-decoration: none;
   font-weight: 500;
@@ -81,27 +81,27 @@
   padding-bottom: 1px;
 }
 
-.company-contact a:hover {
+.privacy-company-contact a:hover {
   border-bottom-color: white;
 }
 
 /* Section Styles */
-.privacy-content {
+.privacy-main-content {
   padding: 3rem;
 }
 
-.policy-section {
+.privacy-section {
   margin-bottom: 3.5rem;
   position: relative;
 }
 
-.section-header {
+.privacy-section-header {
   display: flex;
   align-items: center;
   margin-bottom: 1.5rem;
 }
 
-.section-number {
+.privacy-section-number {
   width: 2.8rem;
   height: 2.8rem;
   background-color: #092948;
@@ -117,7 +117,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.section-header h2 {
+.privacy-section-header h2 {
   font-size: 1.6rem;
   color: #000000;
   margin: 0;
@@ -125,28 +125,28 @@
   letter-spacing: -0.25px;
 }
 
-.section-content {
+.privacy-section-content {
   padding-left: 4.3rem;
 }
 
-.section-content p {
+.privacy-section-content p {
   margin: 0 0 1.5rem 0;
   color: #555;
   font-size: 1.05rem;
   line-height: 1.7;
 }
 
-.section-content ul {
+.privacy-section-content ul {
   margin: 1rem 0;
   padding-left: 1.5rem;
 }
 
-.section-content li {
+.privacy-section-content li {
   margin-bottom: 0.5rem;
   color: #555;
 }
 
-.section-content a {
+.privacy-section-content a {
   color: #2e7d32;
   text-decoration: none;
   font-weight: 500;
@@ -155,12 +155,12 @@
   padding-bottom: 1px;
 }
 
-.section-content a:hover {
+.privacy-section-content a:hover {
   color: #092948;
   border-bottom-color: #092948;
 }
 
-address {
+.privacy-section-content address {
   font-style: normal;
   background-color: #f5f5f5;
   padding: 1.2rem;
@@ -168,7 +168,7 @@ address {
   margin-top: 1rem;
 }
 
-address a {
+.privacy-section-content address a {
   color: #000000;
 }
 
@@ -180,17 +180,19 @@ address a {
   font-size: 0.95rem;
 }
 
+.privacy-footer p {
+  color: white;
+}
+
 /* Animations and Effects */
-.policy-section {
+.privacy-section {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.policy-section:hover {
+.privacy-section:hover {
   transform: translateX(5px);
 }
-.privacy-footer p{
-    color: white;
-}
+
 /* Responsive Design */
 @media (max-width: 900px) {
   .privacy-header {
@@ -201,21 +203,21 @@ address a {
     font-size: 2.4rem;
   }
   
-  .section-header h2 {
+  .privacy-section-header h2 {
     font-size: 1.4rem;
   }
   
-  .section-content {
+  .privacy-section-content {
     padding-left: 3.5rem;
   }
 }
 
 @media (max-width: 768px) {
-  .privacy-policy-container {
+  .privacy-container {
     padding: 1rem;
   }
   
-  .privacy-content {
+  .privacy-main-content {
     padding: 2rem;
   }
   
@@ -227,22 +229,22 @@ address a {
     font-size: 2rem;
   }
   
-  .section-number {
+  .privacy-section-number {
     width: 2.4rem;
     height: 2.4rem;
     font-size: 1rem;
     margin-right: 1.2rem;
   }
   
-  .section-content {
+  .privacy-section-content {
     padding-left: 3rem;
   }
   
-  .section-content p {
+  .privacy-section-content p {
     font-size: 1rem;
   }
   
-  .company-contact {
+  .privacy-company-contact {
     padding: 1rem;
   }
 }
@@ -252,40 +254,40 @@ address a {
     font-size: 1.8rem;
   }
   
-  .section-header {
+  .privacy-section-header {
     flex-direction: column;
     align-items: flex-start;
   }
   
-  .section-number {
+  .privacy-section-number {
     margin-bottom: 0.8rem;
     margin-right: 0;
   }
   
-  .section-content {
+  .privacy-section-content {
     padding-left: 0;
   }
   
-  .policy-section {
+  .privacy-section {
     margin-bottom: 2.5rem;
   }
   
-  .policy-section:hover {
+  .privacy-section:hover {
     transform: none;
   }
   
-  .company-contact p {
+  .privacy-company-contact p {
     font-size: 0.95rem;
   }
 }
 
 @media print {
-  .privacy-policy-container {
+  .privacy-container {
     background: none;
     padding: 0;
   }
   
-  .privacy-policy-content {
+  .privacy-content {
     box-shadow: none;
     border-radius: 0;
   }
@@ -296,7 +298,7 @@ address a {
     print-color-adjust: exact;
   }
   
-  .header-overlay {
+  .privacy-header-overlay {
     display: none;
   }
   

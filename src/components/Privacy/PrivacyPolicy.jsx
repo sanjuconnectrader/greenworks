@@ -3,26 +3,26 @@ import './PrivacyPolicy.css';
 
 const PrivacyPolicy = () => {
   return (
-    <div className="privacy-policy-container">
-      <div className="privacy-policy-content">
+    <div className="privacy-container">
+      <div className="privacy-content">
         <header className="privacy-header">
-          <div className="header-overlay"></div>
+          <div className="privacy-header-overlay"></div>
           <h1>Privacy Policy</h1>
-          <p className="last-updated">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-          <div className="company-contact">
+          <p className="privacy-last-updated">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          <div className="privacy-company-contact">
             <p>Greenworks Carpet Service Cleaning</p>
             <p>16824 44th Ave W Unit-170, Lynnwood, WA 98037</p>
             <p><a href="tel:2068996862">(206) 899-6862</a> | <a href="mailto:info@greenworkscarpetcleaning.com">info@greenworkscarpetcleaning.com</a></p>
           </div>
         </header>
 
-        <div className="privacy-content">
-          <section className="policy-section">
-            <div className="section-header">
-              <div className="section-number">1</div>
+        <div className="privacy-main-content">
+          <section className="privacy-section">
+            <div className="privacy-section-header">
+              <div className="privacy-section-number">1</div>
               <h2>Information We Collect</h2>
             </div>
-            <div className="section-content">
+            <div className="privacy-section-content">
               <p>
                 Greenworks Carpet Service Cleaning collects information through our website contact forms, phone calls, and service appointments. We may collect:
               </p>
@@ -38,12 +38,12 @@ const PrivacyPolicy = () => {
             </div>
           </section>
 
-          <section className="policy-section">
-            <div className="section-header">
-              <div className="section-number">2</div>
+          <section className="privacy-section">
+            <div className="privacy-section-header">
+              <div className="privacy-section-number">2</div>
               <h2>How We Use Your Information</h2>
             </div>
-            <div className="section-content">
+            <div className="privacy-section-content">
               <p>
                 Your information is used exclusively to:
               </p>
@@ -59,12 +59,12 @@ const PrivacyPolicy = () => {
             </div>
           </section>
 
-          <section className="policy-section">
-            <div className="section-header">
-              <div className="section-number">3</div>
+          <section className="privacy-section">
+            <div className="privacy-section-header">
+              <div className="privacy-section-number">3</div>
               <h2>Data Storage & Security</h2>
             </div>
-            <div className="section-content">
+            <div className="privacy-section-content">
               <p>
                 Customer information is stored on secure, access-controlled systems with encryption. We retain service records for 3 years for warranty purposes, after which they are securely deleted.
               </p>
@@ -74,12 +74,12 @@ const PrivacyPolicy = () => {
             </div>
           </section>
 
-          <section className="policy-section">
-            <div className="section-header">
-              <div className="section-number">4</div>
+          <section className="privacy-section">
+            <div className="privacy-section-header">
+              <div className="privacy-section-number">4</div>
               <h2>Your Privacy Rights</h2>
             </div>
-            <div className="section-content">
+            <div className="privacy-section-content">
               <p>
                 You have the right to:
               </p>
@@ -95,12 +95,12 @@ const PrivacyPolicy = () => {
             </div>
           </section>
 
-          <section className="policy-section">
-            <div className="section-header">
-              <div className="section-number">5</div>
+          <section className="privacy-section">
+            <div className="privacy-section-header">
+              <div className="privacy-section-number">5</div>
               <h2>Policy Updates & Contact</h2>
             </div>
-            <div className="section-content">
+            <div className="privacy-section-content">
               <p>
                 This policy may be updated to reflect changes in our practices or legal requirements. The "Last updated" date at the top of this page will indicate when changes were made.
               </p>

@@ -1,6 +1,6 @@
 /* Base Styles */
 .terms-container {
-   background-color: #f9f9f9;
+  background-color: #f9f9f9;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -22,14 +22,14 @@
 
 /* Header Styles */
 .terms-header {
- text-align: center;
+  text-align: center;
   padding: 4rem 2rem;
   position: relative;
   background: #092948;
   color: white;
 }
 
-.header-overlay {
+.terms-header-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -48,7 +48,7 @@
   text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.last-updated {
+.terms-last-updated {
   color: rgba(255, 255, 255, 0.9);
   font-size: 1rem;
   font-weight: 400;
@@ -56,7 +56,7 @@
   position: relative;
 }
 
-.company-contact {
+.terms-company-contact {
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(5px);
   padding: 1.5rem;
@@ -66,13 +66,13 @@
   position: relative;
 }
 
-.company-contact p {
+.terms-company-contact p {
   margin: 0.5rem 0;
   color: white;
   font-size: 1.05rem;
 }
 
-.company-contact a {
+.terms-company-contact a {
   color: white;
   text-decoration: none;
   font-weight: 500;
@@ -81,7 +81,7 @@
   padding-bottom: 1px;
 }
 
-.company-contact a:hover {
+.terms-company-contact a:hover {
   border-bottom-color: white;
 }
 
@@ -95,13 +95,13 @@
   position: relative;
 }
 
-.section-header {
+.terms-section-header {
   display: flex;
   align-items: center;
   margin-bottom: 1.5rem;
 }
 
-.section-number {
+.terms-section-number {
   width: 2.8rem;
   height: 2.8rem;
   background-color: #092948;
@@ -117,7 +117,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.section-header h2 {
+.terms-section-header h2 {
   font-size: 1.6rem;
   color: #000000;
   margin: 0;
@@ -125,28 +125,28 @@
   letter-spacing: -0.25px;
 }
 
-.section-content {
+.terms-section-content {
   padding-left: 4.3rem;
 }
 
-.section-content p {
+.terms-section-content p {
   margin: 0 0 1.5rem 0;
   color: #555;
   font-size: 1.05rem;
   line-height: 1.7;
 }
 
-.section-content ul {
+.terms-section-content ul {
   margin: 1rem 0;
   padding-left: 1.5rem;
 }
 
-.section-content li {
+.terms-section-content li {
   margin-bottom: 0.5rem;
   color: #555;
 }
 
-.section-content a {
+.terms-section-content a {
   color: #2e7d32;
   text-decoration: none;
   font-weight: 500;
@@ -155,12 +155,12 @@
   padding-bottom: 1px;
 }
 
-.section-content a:hover {
+.terms-section-content a:hover {
   color: #1b5e20;
   border-bottom-color: #1b5e20;
 }
 
-address {
+.terms-section-content address {
   font-style: normal;
   background-color: #f5f5f5;
   padding: 1.2rem;
@@ -168,8 +168,8 @@ address {
   margin-top: 1rem;
 }
 
-address a {
-    color: #000000;
+.terms-section-content address a {
+  color: #000000;
 }
 
 /* Footer Styles */
@@ -189,9 +189,7 @@ address a {
 .terms-section:hover {
   transform: translateX(5px);
 }
-.terms-section p{
-    color: white;
-}
+
 /* Responsive Design */
 @media (max-width: 900px) {
   .terms-header {
@@ -202,11 +200,11 @@ address a {
     font-size: 2.4rem;
   }
   
-  .section-header h2 {
+  .terms-section-header h2 {
     font-size: 1.4rem;
   }
   
-  .section-content {
+  .terms-section-content {
     padding-left: 3.5rem;
   }
 }
@@ -228,22 +226,22 @@ address a {
     font-size: 2rem;
   }
   
-  .section-number {
+  .terms-section-number {
     width: 2.4rem;
     height: 2.4rem;
     font-size: 1rem;
     margin-right: 1.2rem;
   }
   
-  .section-content {
+  .terms-section-content {
     padding-left: 3rem;
   }
   
-  .section-content p {
+  .terms-section-content p {
     font-size: 1rem;
   }
   
-  .company-contact {
+  .terms-company-contact {
     padding: 1rem;
   }
 }
@@ -253,17 +251,17 @@ address a {
     font-size: 1.8rem;
   }
   
-  .section-header {
+  .terms-section-header {
     flex-direction: column;
     align-items: flex-start;
   }
   
-  .section-number {
+  .terms-section-number {
     margin-bottom: 0.8rem;
     margin-right: 0;
   }
   
-  .section-content {
+  .terms-section-content {
     padding-left: 0;
   }
   
@@ -275,7 +273,7 @@ address a {
     transform: none;
   }
   
-  .company-contact p {
+  .terms-company-contact p {
     font-size: 0.95rem;
   }
 }
@@ -297,7 +295,7 @@ address a {
     print-color-adjust: exact;
   }
   
-  .header-overlay {
+  .terms-header-overlay {
     display: none;
   }
   
