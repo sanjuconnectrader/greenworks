@@ -1,14 +1,48 @@
 import React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import "./Location.css";
 
 const CITIES = [
-  "Seattle", "Bellevue", "Kirkland", "Issaquah", "Lynnwood", "Factoria", "Bothell",
-  "Brier", "Edmonds", "Mukilteo", "Renton", "Tacoma", "Medina", "Everett",
-  "Auburn", "Federal Way", "Kent", "Kenmore", "Tukwila", "Mill Creek",
-  "Seatac", "Burien", "Des Moines", "Normandy Park", "Mercer Island", "Snohomish"
+  { name: "Seattle", lat: 47.6062, lng: -122.3321 },
+  { name: "Bellevue", lat: 47.6101, lng: -122.2015 },
+  { name: "Kirkland", lat: 47.6815, lng: -122.2087 },
+  { name: "Issaquah", lat: 47.5301, lng: -122.0326 },
+  { name: "Lynnwood", lat: 47.8279, lng: -122.3053 },
+  { name: "Factoria", lat: 47.5706, lng: -122.1536 },
+  { name: "Bothell", lat: 47.7601, lng: -122.2054 },
+  { name: "Brier", lat: 47.7845, lng: -122.2743 },
+  { name: "Edmonds", lat: 47.8107, lng: -122.3776 },
+  { name: "Mukilteo", lat: 47.9445, lng: -122.3046 },
+  { name: "Renton", lat: 47.4829, lng: -122.2171 },
+  { name: "Tacoma", lat: 47.2529, lng: -122.4443 },
+  { name: "Medina", lat: 47.6209, lng: -122.2276 },
+  { name: "Everett", lat: 47.9789, lng: -122.2021 },
+  { name: "Auburn", lat: 47.3073, lng: -122.2285 },
+  { name: "Federal Way", lat: 47.3223, lng: -122.3126 },
+  { name: "Kent", lat: 47.3809, lng: -122.2348 },
+  { name: "Kenmore", lat: 47.7573, lng: -122.2440 },
+  { name: "Tukwila", lat: 47.4626, lng: -122.2550 },
+  { name: "Mill Creek", lat: 47.8579, lng: -122.2043 },
+  { name: "Seatac", lat: 47.4447, lng: -122.3137 },
+  { name: "Burien", lat: 47.4698, lng: -122.3487 },
+  { name: "Des Moines", lat: 47.4018, lng: -122.3243 },
+  { name: "Normandy Park", lat: 47.4362, lng: -122.3407 },
+  { name: "Mercer Island", lat: 47.5707, lng: -122.2221 },
+  { name: "Snohomish", lat: 47.9126, lng: -122.0982 }
 ];
+
+const mapContainerStyle = {
+  width: '100%',
+  height: '100%',
+  borderRadius: '12px',
+};
+
+const center = {
+  lat: 47.5,
+  lng: -122.2
+};
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -35,6 +69,13 @@ const itemAnimation = {
 };
 
 export default function Location() {
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY // Add your API key in .env
+  });
+
+  if (loadError) return <div>Error loading maps</div>;
+  if (!isLoaded) return <div>Loading maps</div>;
+
   return (
     <section className="location-section" id="locations">
       <div className="location-container">
@@ -59,7 +100,7 @@ export default function Location() {
         </motion.header>
 
         <div className="location-content">
-          {/* Map Visualization */}
+          {/* Google Map Visualization */}
           <motion.div 
             className="location-map"
             initial="hidden"
@@ -69,18 +110,34 @@ export default function Location() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="map-wrapper">
-              <img 
-                src="./map.jpg" 
-                alt="Service coverage map" 
-                className="map-image"
-                loading="lazy"
-              />
-              <div className="map-overlay"></div>
-              <div className="map-highlight">
-                <div className="highlight-circle"></div>
-                <div className="highlight-glow"></div>
-                <div className="pulse-effect"></div>
-              </div>
+              <GoogleMap
+                mapContainerStyle={mapContainerStyle}
+                zoom={10}
+                center={center}
+                options={{
+                  styles: [
+                    {
+                      featureType: "poi",
+                      stylers: [{ visibility: "off" }]
+                    },
+                    {
+                      featureType: "transit",
+                      elementType: "labels.icon",
+                      stylers: [{ visibility: "off" }]
+                    }
+                  ]
+                }}
+              >
+                {CITIES.map((city) => (
+                  <Marker
+                    key={city.name}
+                    position={{ lat: city.lat, lng: city.lng }}
+                    icon={{
+                      url: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png'
+                    }}
+                  />
+                ))}
+              </GoogleMap>
               <div className="map-label">Seattle Metro Area</div>
             </div>
           </motion.div>
@@ -98,9 +155,9 @@ export default function Location() {
               <div className="list-divider"></div>
             </div>
             <motion.ul className="location-list">
-              {CITIES.map((city, index) => (
+              {CITIES.map((city) => (
                 <motion.li 
-                  key={city} 
+                  key={city.name} 
                   className="location-item"
                   variants={itemAnimation}
                   whileHover={{ 
@@ -110,7 +167,7 @@ export default function Location() {
                 >
                   <div className="item-content">
                     <FaMapMarkerAlt className="location-icon" />
-                    <span className="city-name">{city}</span>
+                    <span className="city-name">{city.name}</span>
                   </div>
                   <div className="item-hover-effect"></div>
                 </motion.li>

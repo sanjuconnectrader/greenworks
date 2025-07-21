@@ -12,7 +12,7 @@ const cards = [
   },
   {
     title: "UPHOLSTERY CLEANING",
-    image: "./service2.jpg",
+    image: "./service1.1.jpg",
     details: "Upholstery and furniture are often the most neglected furnishing in your home or office. Carpet cleaning is very common but having the furniture maintained is a must as well. ",
     button: "View Services",
     buttonLink: "#",

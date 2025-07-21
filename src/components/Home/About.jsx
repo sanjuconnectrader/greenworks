@@ -35,7 +35,7 @@ const About = () => {
           <div className="About-home-image-container" ref={imageRef}>
             <div className="About-home-image-wrapper">
               <img
-                src="./service1.jpg"
+                src="./team.jpeg"
                 alt="Professional carpet cleaning service"
                 className="About-home-image"
                 loading="lazy"

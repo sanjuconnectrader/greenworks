@@ -147,19 +147,19 @@ const GreenworksIntro = () => {
           <div className="greenworks-intro__features">
             <div className="greenworks-intro__feature" ref={(el) => addToRefs(featureRefs, el)}>
               <div className="greenworks-intro__feature-icon">✓</div>
-              <span>Carpet & Upholstery Cleaning</span>
+              <span>cleaning company dedicated to providing top quality service</span>
             </div>
             <div className="greenworks-intro__feature" ref={(el) => addToRefs(featureRefs, el)}>
               <div className="greenworks-intro__feature-icon">✓</div>
-              <span>Tile & Grout Restoration</span>
+              <span>We pride ourselves on using family and pet safe cleaning products</span>
             </div>
             <div className="greenworks-intro__feature" ref={(el) => addToRefs(featureRefs, el)}>
               <div className="greenworks-intro__feature-icon">✓</div>
-              <span>RV & Camper Deep Cleaning</span>
+              <span>Give us a call or use our online quote and scheduling form</span>
             </div>
             <div className="greenworks-intro__feature" ref={(el) => addToRefs(featureRefs, el)}>
               <div className="greenworks-intro__feature-icon">✓</div>
-              <span>Pet-Safe Solutions</span>
+              <span>carpet, upholstery, and tile and grout cleaning.</span>
             </div>
           </div>
         </div>
