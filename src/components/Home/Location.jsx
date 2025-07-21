@@ -1,5 +1,5 @@
 import React from "react";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt, FaChevronRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import "./Location.css";
@@ -22,8 +22,8 @@ const CITIES = [
   { name: "Auburn", lat: 47.3073, lng: -122.2285 },
   { name: "Federal Way", lat: 47.3223, lng: -122.3126 },
   { name: "Kent", lat: 47.3809, lng: -122.2348 },
-  { name: "Kenmore", lat: 47.7573, lng: -122.2440 },
-  { name: "Tukwila", lat: 47.4626, lng: -122.2550 },
+  { name: "Kenmore", lat: 47.7573, lng: -122.244 },
+  { name: "Tukwila", lat: 47.4626, lng: -122.255 },
   { name: "Mill Creek", lat: 47.8579, lng: -122.2043 },
   { name: "Seatac", lat: 47.4447, lng: -122.3137 },
   { name: "Burien", lat: 47.4698, lng: -122.3487 },
@@ -36,12 +36,19 @@ const CITIES = [
 const mapContainerStyle = {
   width: '100%',
   height: '100%',
-  borderRadius: '12px',
+  borderRadius: '16px',
 };
 
 const center = {
   lat: 47.5,
   lng: -122.2
+};
+
+const bounds = {
+  north: 48.0,
+  south: 47.2,
+  west: -122.5,
+  east: -121.8
 };
 
 const fadeIn = {
@@ -70,7 +77,7 @@ const itemAnimation = {
 
 export default function Location() {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY // Add your API key in .env
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
   });
 
   if (loadError) return <div>Error loading maps</div>;
@@ -82,6 +89,7 @@ export default function Location() {
         {/* Decorative elements */}
         <div className="location-decoration location-decoration-1"></div>
         <div className="location-decoration location-decoration-2"></div>
+        <div className="location-decoration location-decoration-3"></div>
         
         <motion.header 
           className="location-header"
@@ -92,10 +100,11 @@ export default function Location() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="location-title">
-            <span className="title-text">OUR SERVICE AREAS</span>
+            <span className="title-text">Service Areas</span>
+            <span className="title-accent">Across the Pacific Northwest</span>
           </h2>
           <p className="location-subtitle">
-            Premium carpet cleaning services across the Pacific Northwest
+            Premium carpet cleaning services serving the entire Seattle metropolitan area and surrounding communities
           </p>
         </motion.header>
 
@@ -125,7 +134,14 @@ export default function Location() {
                       elementType: "labels.icon",
                       stylers: [{ visibility: "off" }]
                     }
-                  ]
+                  ],
+                  restriction: {
+                    latLngBounds: bounds,
+                    strictBounds: false
+                  },
+                  disableDefaultUI: true,
+                  zoomControl: true,
+                  gestureHandling: "greedy"
                 }}
               >
                 {CITIES.map((city) => (
@@ -133,12 +149,19 @@ export default function Location() {
                     key={city.name}
                     position={{ lat: city.lat, lng: city.lng }}
                     icon={{
-                      url: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png'
+                      url: 'data:image/svg+xml;charset=UTF-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyLDJBMTAsMTAgMCAwLDAgMiwxMkExMCwxMCAwIDAsMCAxMiwyMkExMCwxMCAwIDAsMCAyMiwxMkExMCwxMCAwIDAsMCAxMiwyTTEyLDQuMjlDMTUuODksNC4yOSAxOS4wMSw3LjQxIDE5LjAxLDExLjNDMTkuMDEsMTQuMTkgMTYuNjQsMTcuNDMgMTIsMTkuNTVDNy4zNiwxNy40MyA0Ljk5LDE0LjE5IDQuOTksMTEuM0M0Ljk5LDcuNDEgOC4xMSw0LjI5IDEyLDQuMjlNMTIsNkE1LjMxLDUuMzEgMCAwLDAgNi42OSwxMS4zMUE1LjMxLDUuMzEgMCAwLDAgMTIsMTYuNjJBNS4zMSw1LjMxIDAgMCwwIDE3LjMxLDExLjMxQTUuMzEsNS4zMSAwIDAsMCAxMiw2WiIgZmlsbD0iI0Y5NDAyQyIvPjwvc3ZnPg==',
+                      scaledSize: new window.google.maps.Size(32, 32),
+                      origin: new window.google.maps.Point(0, 0),
+                      anchor: new window.google.maps.Point(16, 32)
                     }}
+                    title={city.name}
                   />
                 ))}
               </GoogleMap>
-              <div className="map-label">Seattle Metro Area</div>
+              <div className="map-label">
+                <span>Seattle Metro Area</span>
+                <div className="map-label-glow"></div>
+              </div>
             </div>
           </motion.div>
 
@@ -153,6 +176,7 @@ export default function Location() {
             <div className="location-list-header">
               <h3 className="list-title">Cities We Serve</h3>
               <div className="list-divider"></div>
+              <p className="list-subtitle">Over 25 communities across King and Snohomish counties</p>
             </div>
             <motion.ul className="location-list">
               {CITIES.map((city) => (
@@ -166,13 +190,32 @@ export default function Location() {
                   }}
                 >
                   <div className="item-content">
-                    <FaMapMarkerAlt className="location-icon" />
+                    <div className="marker-wrapper">
+                      <FaMapMarkerAlt className="location-icon" />
+                      <div className="marker-glow"></div>
+                    </div>
                     <span className="city-name">{city.name}</span>
+                    <FaChevronRight className="location-chevron" />
                   </div>
                   <div className="item-hover-effect"></div>
                 </motion.li>
               ))}
             </motion.ul>
+            
+            <motion.div 
+              className="location-cta"
+              initial="hidden"
+              whileInView="visible"
+              variants={fadeIn}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              <p className="cta-text">Don't see your location? We may still serve your area!</p>
+              <a href="#contact" className="cta-button">
+                <span>Contact Us</span>
+                <div className="button-hover"></div>
+              </a>
+            </motion.div>
           </motion.div>
         </div>
       </div>

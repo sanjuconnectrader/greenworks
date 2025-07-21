@@ -90,7 +90,7 @@
   margin: 0 auto;
 }
 
-/* Features Grid - Modified for 4 columns on desktop */
+/* Features Grid */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -137,7 +137,6 @@
   justify-content: center;
   margin-bottom: 1.5rem;
   color: var(--primary);
-  font-size: 1.75rem;
   transition: var(--transition);
 }
 
@@ -191,7 +190,6 @@
 }
 
 .service-img {
-
   width: 100%;
   height: 0;
   padding-bottom: 165%;
@@ -220,11 +218,6 @@
   height: 100%;
   background: linear-gradient(45deg, rgba(37, 99, 235, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
   z-index: 1;
-}
-
-
-.service-icon-badge:hover {
-  transform: rotate(15deg) scale(1.1);
 }
 
 .service-acc {
@@ -281,6 +274,11 @@
   font-weight: 700;
 }
 
+.benefit-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
 .acc-list {
   list-style: none;
   padding: 0;
@@ -321,23 +319,6 @@
   background: var(--primary-extra-light);
 }
 
-.acc-icon-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.acc-feature-icon {
-  color: var(--primary);
-  font-size: 1.5rem;
-  min-width: 24px;
-  transition: var(--transition);
-}
-
-.acc-item.is-open .acc-feature-icon {
-  transform: scale(1.1);
-}
-
 .acc-btn-text {
   font-weight: 600;
   color: var(--dark);
@@ -352,6 +333,11 @@
 .acc-icon {
   color: var(--primary);
   transition: var(--transition);
+}
+
+.acc-icon svg {
+  width: 16px;
+  height: 16px;
 }
 
 .acc-body-content {
@@ -406,8 +392,12 @@
   position: absolute;
   left: 1.5rem;
   top: 1.5rem;
-  font-size: 1.5rem;
   color: var(--primary);
+}
+
+.note-icon svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* Testimonials */
@@ -489,7 +479,6 @@
 
 .testimonial-star {
   color: var(--lighter);
-  font-size: 1.25rem;
 }
 
 .testimonial-star.filled {
@@ -587,14 +576,6 @@
   
   .service-block.reverse {
     direction: ltr;
-  }
-  
-  .service-icon-badge {
-    width: 80px;
-    height: 80px;
-    font-size: 2rem;
-    bottom: -25px;
-    right: 25px;
   }
   
   .testimonials-section {

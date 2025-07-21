@@ -332,8 +332,7 @@ const TESTIMONIALS = [
     rating: 4
   }
 ];
-
-const AccordionItem = ({ title, body, details, icon, defaultOpen = false }) => {
+const AccordionItem = ({ title, body, details, defaultOpen = false }) => {
   const [open, setOpen] = useState(defaultOpen);
   
   return (
@@ -345,16 +344,15 @@ const AccordionItem = ({ title, body, details, icon, defaultOpen = false }) => {
         whileHover={{ backgroundColor: "rgba(37, 99, 235, 0.05)" }}
         whileTap={{ scale: 0.98 }}
       >
-        <span className="acc-icon-wrapper">
-          <span className="acc-feature-icon">{icon}</span>
-          <span className="acc-btn-text">{title}</span>
-        </span>
+        <span className="acc-btn-text">{title}</span>
         <motion.span 
           className="acc-icon"
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <FaChevronDown size={14} />
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </motion.span>
       </motion.button>
       
@@ -401,7 +399,7 @@ const AccordionItem = ({ title, body, details, icon, defaultOpen = false }) => {
   );
 };
 
-const ServiceBlock = ({ heading, image, steps, disclaimer, reverse, icon, benefits }) => {
+const ServiceBlock = ({ heading, image, steps, disclaimer, reverse, benefits }) => {
   return (
     <motion.div 
       className={`service-block ${reverse ? "reverse" : ""}`}
@@ -414,9 +412,6 @@ const ServiceBlock = ({ heading, image, steps, disclaimer, reverse, icon, benefi
         <figure className="service-img">
           <img src={image} alt={heading} loading="lazy" />
           <div className="image-overlay"></div>
-          <div className="service-icon-badge">
-            {icon}
-          </div>
         </figure>
       </div>
 
@@ -436,7 +431,11 @@ const ServiceBlock = ({ heading, image, steps, disclaimer, reverse, icon, benefi
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <span className="benefit-icon">✓</span>
+              <span className="benefit-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
               <span>{benefit}</span>
             </motion.div>
           ))}
@@ -460,7 +459,13 @@ const ServiceBlock = ({ heading, image, steps, disclaimer, reverse, icon, benefi
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            <div className="note-icon">ℹ️</div>
+            <div className="note-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M12 16V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M12 8H12.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
             <p>{disclaimer}</p>
           </motion.div>
         )}
@@ -469,7 +474,7 @@ const ServiceBlock = ({ heading, image, steps, disclaimer, reverse, icon, benefi
   );
 };
 
-const FeatureCard = ({ icon, title, description }) => {
+const FeatureCard = ({ title, description }) => {
   return (
     <motion.div 
       className="feature-card"
@@ -477,7 +482,11 @@ const FeatureCard = ({ icon, title, description }) => {
       transition={{ duration: 0.3 }}
     >
       <div className="feature-icon-container">
-        {icon}
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M12 8V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M12 16H12.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
       </div>
       <h3 className="feature-title">{title}</h3>
       <p className="feature-description">{description}</p>
@@ -487,10 +496,23 @@ const FeatureCard = ({ icon, title, description }) => {
 
 const TestimonialCard = ({ name, role, content, rating }) => {
   const stars = Array(5).fill(0).map((_, i) => (
-    <FaStar 
+    <svg 
       key={i} 
       className={`testimonial-star ${i < rating ? "filled" : ""}`}
-    />
+      width="20" 
+      height="20" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" 
+        stroke="currentColor" 
+        strokeWidth="2" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+        fill={i < rating ? "currentColor" : "none"}
+      />
+    </svg>
   ));
   
   return (
